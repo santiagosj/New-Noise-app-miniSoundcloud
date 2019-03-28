@@ -12,7 +12,7 @@ import { Artist } from '../models/artist';
 	providers: [UserService,ArtistService]
 })
 
-export class ArtistListComponent implements OnInit{
+export class ArtistListComponent implements OnInit {
   public titulo:string;
   public artists: Artist[];
   public identity;

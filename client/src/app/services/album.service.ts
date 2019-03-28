@@ -40,16 +40,6 @@ getAlbums(token, artistId = null){
       }
 }
 
-getAlbumsList(token, page){
-  let headers = new Headers({
-    'Content-Type':'application/json',
-    'Authorization':token
-  });
-
-  let options = new RequestOptions({ headers: headers });
-  return this._http.get(this.url+'albums/'+page, options)
-                   .pipe(map(res => res.json()));
-}
 
 addAlbum(token, album: Album){
   let params = JSON.stringify(album);

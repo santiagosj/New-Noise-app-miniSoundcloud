@@ -6,6 +6,7 @@ import { UserService } from '../services/user.service'; //?
 import { AlbumService } from '../services/album.service';
 import { Album } from '../models/album';
 
+
 @Component({
   selector:'album-list',
   templateUrl: '../views/album-list.html',
@@ -18,9 +19,9 @@ export class AlbumListComponent implements OnInit{
   public identity;
   public token;
   public url:string;
+  public alertMessage;
   public next_page;
   public prev_page;
-
 
   constructor(
     private _route:ActivatedRoute,
@@ -44,6 +45,7 @@ export class AlbumListComponent implements OnInit{
 
   getAlbums(){
     this._route.params.forEach((params:Params)=>{
+      let id = null;
       let page = +params['page'];
       if(!page){
         page = 1;
@@ -56,24 +58,21 @@ export class AlbumListComponent implements OnInit{
         }
       }
 
-       this._albumService.getAlbumsList(this.token, page).subscribe(
-         response=>{
-           if(!response.albums){
-             this._router.navigate(['/']);
-           }else{
-             this.albums = response.albums;
-           }
-         }, error=>{
-           var errorMessage = <any>error;
-
-           if(errorMessage != null){
-             var body = JSON.parse(error._body);
-
-             console.log(error);
-           }
-         })
-
-    })
+      this._albumService.getAlbums(this.token, id).subscribe(
+        response =>{
+          if(!response.albums){
+            this.alertMessage = 'No hay albums en la base de datos';
+          }else{
+            this.albums = response.albums;
+          }
+        },error=>{
+          var messageErr = <any>error;
+          if(messageErr != null){
+            var body = JSON.parse(error._body);
+            console.log(error);
+            }
+        })
+     })
   }
 
 }
