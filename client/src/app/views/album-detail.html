@@ -1,4 +1,5 @@
 <div class="album-box" *ngIf="album">
+
 	<div id="album-head-card">
 		<div class="image">
 			<img src="{{ url + 'get-image-album/' + album.image }}" />
@@ -14,6 +15,7 @@
 			</a>
 		</div>
 	</div>
+
 	<div class="clearfix"></div>
 	<div id="gallery-songs" *ngIf="songs">
 		<ul id="songs-list">
@@ -26,20 +28,20 @@
 					{{song.number + '. '+ song.name + ' - '+ song.duration}}
 
 					<div class="buttons" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
-						<a [routerLink]="['/editar-tema', song._id]" class="btn btn-warning">
+						<a [routerLink]="['/editar-tema', song._id]" class="">
 							Editar
 						</a>
 
-						<a (click)="onDeleteConfirm(song._id)" class="btn btn-danger">
+						<a (click)="onDeleteConfirm(song._id)" class="">
 							Borrar
 						</a>
 					</div>
 
 					<div class="seguro seguro-song" *ngIf="confirmado == song._id">
-						<a (click)="onDeleteSong(song._id)" class="btn btn-danger">
+						<a (click)="onDeleteSong(song._id)" class="">
 							Eliminar
 						</a>
-						<a (click)="onCancelSong()" class="btn btn-primary">
+						<a (click)="onCancelSong()" class="">
 							Cancelar
 						</a>
 					</div>

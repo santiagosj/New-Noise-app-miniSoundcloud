@@ -78,8 +78,9 @@ export class ArtistListComponent implements OnInit{
   }
 
 public confirmado;
+
 onDeleteConfirm(id){
-  this.confirmado = id;
+   this.confirmado = id;
 }
 
 onCancelArtist(){

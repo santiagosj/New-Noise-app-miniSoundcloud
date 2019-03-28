@@ -10,6 +10,7 @@ import { ArtistAddComponent } from './components/artist-add.component';
 import { ArtistEditComponent } from './components/artist-edit.component';
 import { ArtistDetailComponent } from './components/artist-detail.component';
 //importar albums
+import { AlbumListComponent } from './components/album-list.component';
 import { AlbumAddComponent } from './components/album-add.component';
 import { AlbumEditComponent } from './components/album-edit.component';
 import { AlbumDetailComponent } from './components/album-detail.component';
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
 	{path: '', component: HomeComponent },
 	{path: 'editar-tema/:id', component: SongEditComponent },
 	{path: 'crear-tema/:album', component: SongAddComponent },
+	{path: 'albums/:page', component: AlbumListComponent},
 	{path: 'editar-album/:id', component: AlbumEditComponent},
 	{path: 'crear-album/:artist', component: AlbumAddComponent },
 	{path: 'artistas/:page', component: ArtistListComponent },

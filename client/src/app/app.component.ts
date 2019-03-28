@@ -13,7 +13,7 @@ import { User } from './models/user';
 })
 
 export class AppComponent implements OnInit {
-  public title = 'musify!';
+  public title = 'NEW NOISE';
   public user: User;
   public user_register: User;
   public identity;

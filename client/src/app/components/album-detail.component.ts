@@ -83,12 +83,13 @@ export class AlbumDetailComponent implements OnInit{
             }
          }
       );
-
     });
   }
+
   public confirmado;
+
   onDeleteConfirm(id){
-    this.confirmado = id;
+     this.confirmado = id;
   }
 
   onCancelSong(){

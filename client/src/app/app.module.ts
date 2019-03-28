@@ -10,6 +10,7 @@ import { UserEditComponent } from './components/user-edit.component';
 import { HomeComponent } from './components/home.component';
 import { ArtistAddComponent } from './components/artist-add.component';
 import { ArtistEditComponent } from './components/artist-edit.component';
+import { AlbumListComponent } from './components/album-list.component';
 import { ArtistDetailComponent } from './components/artist-detail.component';
 import { AlbumDetailComponent } from './components/album-detail.component';
 import { AlbumAddComponent } from './components/album-add.component';
@@ -22,11 +23,12 @@ import { PlayerComponent } from './components/player.component';
   declarations: [
     AppComponent,
     UserEditComponent,
-    ArtistListComponent,
     HomeComponent,
+    ArtistListComponent,
     ArtistAddComponent,
     ArtistEditComponent,
     ArtistDetailComponent,
+    AlbumListComponent,
     AlbumAddComponent,
     AlbumEditComponent,
     AlbumDetailComponent,

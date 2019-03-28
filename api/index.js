@@ -7,7 +7,7 @@ var port = process.env.PORT || 3977;//configura el puerto
 
 //conexion a la base de datos
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/curso_mean2', (err, res) => {
+mongoose.connect('mongodb://localhost:27017/dbminisound', (err, res) => {
 if (err) {
   throw err;
 } else {

@@ -24,7 +24,6 @@ Album.findById(albumId).populate({path:'artist'}).exec((err, album)=>{
   }
 })
 
-
 }
 
 function saveAlbum(req, res){

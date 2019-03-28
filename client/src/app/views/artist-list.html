@@ -1,6 +1,13 @@
+<section>
+
 <div class="head-page" *ngIf="identity">
-  {{titulo}} <br>
+
+  <h1>{{titulo}}</h1>
+
+  <br>
+
   <a [routerLink]="['/crear-artista']" *ngIf="identity.role == 'ROLE_ADMIN'" class="btn btn-default">Añadir Artista</a>
+
   <ul class="pagination pull-right">
     <li><a [routerLink]="['/artistas',prev_page]">&laquo;</a></li>
     <li><a [routerLink]="['/artistas',next_page]">&raquo;</a></li>
@@ -9,25 +16,38 @@
 </div>
 
 <div class="clearfix"></div>
-<ul class="artists-list" *ngIf="identity">
+
+<ul class="artist-list" *ngIf="identity">
+
   <li *ngFor="let artist of artists" class="col-lg-3 artist-item">
+
     <div class="artist-image">
       <img src="{{url + 'get-image-artist/' + artist.image}}">
     </div>
-    <div class="artist-name">
 
-       <a  [routerLink]="['/artista',artist._id]">{{artist.name}}</a>
- <div class="buttons" *ngIf="identity.role == 'ROLE_ADMIN'">
-    <a [routerLink]="['/editar-artista',artist._id]" class="btn btn-sm btn-warning">Editar</a>
-    <a (click)="onDeleteConfirm(artist._id)" class="btn btn-sm btn-danger">Eliminar</a>
- </div>
- <div class="seguro" *ngIf="confirmado == artist._id">
-     <h4>¿Estas seguro de querer eliminar este Artista?</h4>
-     <a (click)="onDeleteArtist(artist._id)" class="btn btn-sm btn-danger">Eliminar</a>
-     <a (click)="onCancelArtist(artist._id)" class="btn btn-sm btn-primary">Cancelar</a>
- </div>
+      <div class="artist-name">
+
+      <a  [routerLink]="['/artista',artist._id]">{{artist.name}}</a>
+
+      <!-- edicion o eliminacion de artista segun el rol del usuario -->
+
+      <div class="buttons" *ngIf="identity.role == 'ROLE_ADMIN'">
+        <a [routerLink]="['/editar-artista',artist._id]" class="buttons">Editar</a>
+        <a (click)="onDeleteConfirm(artist._id)" class="buttons">Eliminar</a>
+      </div>
+
+       <!-- confirmacion de borrado de artista -->
+
+      <div class="seguro" *ngIf="confirmado == artist._id">
+           <h4>¿Estas seguro de querer eliminar este Artista?</h4>
+           <a (click)="onDeleteArtist(artist._id)" class="buttons">Eliminar</a>
+           <a (click)="onCancelArtist(artist._id)" class="buttons">Cancelar</a>
+      </div>
 
     </div>
 
   </li>
+
 </ul>
+
+</section>

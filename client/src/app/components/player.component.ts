@@ -11,7 +11,7 @@ import {GLOBAL} from '../services/global';
 		</span>
 
 		<span *ngIf="!song.album">
-			<img id="play-image-album" src="assets/images/default.jpg" />
+			<img id="play-image-album" src="assets/images/cassette-tape.jpg" />
 		</span>
 	</div>
 
