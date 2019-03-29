@@ -8,6 +8,31 @@ html, body{
 font-family: 'Special Elite', cursive;
 }
 
+.home-div{
+	position: relative;
+	top: 130px;
+	display: inline-block;
+	text-align: center;
+}
+
+.home-div h2 a{
+	font-size: 36px;
+}
+
+.home-div h1{
+  font-size: 100px;
+}
+
+h1, h2, p, a{
+	display: inline-block;
+	background-color: black;
+	color: white;
+}
+
+.home-div h2 a:hover{
+	color: white;
+	text-decoration: none;
+}
 .buttons{
 	padding: 20px;
 }
@@ -26,7 +51,7 @@ font-family: 'Special Elite', cursive;
 	height: 100%;
 	overflow-y: scroll;
 	overflow-x: hidden;
-	background-color: black;
+	background-image: url(https://images.pexels.com/photos/114820/pexels-photo-114820.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
 	color: white;
 }
 
@@ -87,12 +112,6 @@ font-family: 'Special Elite', cursive;
 	color: white;
 }
 
-.navigation .glyphicon{
-	font-size: 25px;
-	display: block;
-	width: 100%;
-}
-
 #user_logged{
 	text-decoration: center;
 	background: #1C1C1F;
@@ -151,6 +170,8 @@ font-family: 'Special Elite', cursive;
 	margin-top: 30px;
 	list-style: none;
 	min-height: 400px;
+	position: relative;
+  left: 150px;
 }
 
 .artist-item{
@@ -194,7 +215,8 @@ font-family: 'Special Elite', cursive;
 
 /*ALBUMS*/
 .album-box #album-head-card .image img {
-	max-width: 250px;
+	max-width: 300px;
+	border: 1px solid white;
 }
 
 .album-list{
@@ -206,6 +228,8 @@ font-family: 'Special Elite', cursive;
 	margin-top: 30px;
 	list-style: none;
 	min-height: 400px;
+	position: relative;
+	left: 150px;
 }
 
 .album-item .album-image{

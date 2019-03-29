@@ -19,7 +19,6 @@ export class AlbumListComponent implements OnInit{
   public identity;
   public token;
   public url:string;
-  public alertMessage;
   public next_page;
   public prev_page;
 
@@ -61,7 +60,7 @@ export class AlbumListComponent implements OnInit{
       this._albumService.getAlbums(this.token, id).subscribe(
         response =>{
           if(!response.albums){
-            this.alertMessage = 'No hay albums en la base de datos';
+            this._router.navigate(['/']);
           }else{
             this.albums = response.albums;
           }

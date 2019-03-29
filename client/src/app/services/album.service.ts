@@ -32,7 +32,7 @@ getAlbums(token, artistId = null){
   });
      let options = new RequestOptions({ headers: headers });
      if(artistId == null){
-             return this._http.get(this.url+'albums', options)
+             return this._http.get(this.url+'albums/', options)
                         .pipe(map(res => res.json()));
       }else{
         return this._http.get(this.url+'albums/'+ artistId, options)

@@ -46,7 +46,7 @@ export class ArtistDetailComponent implements OnInit{
   getArtist(){
     this._route.params.forEach((params:Params)=>{
       let id = params['id'];
-
+      
       this._artistService.getArtist(this.token, id).subscribe(
         response => {
           if(!response.artist){

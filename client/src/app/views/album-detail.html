@@ -5,9 +5,9 @@
 			<img src="{{ url + 'get-image-album/' + album.image }}" />
 		</div>
 		<div class="data">
-			<h1>{{album.title}}</h1>
-			<p><strong>{{album.artist.name}}</strong></p>
-			<p>{{album.year}}</p>
+			<h1>{{album.title}}</h1><br>
+			<p>Artist name: <strong>{{album.artist.name}}</strong></p><br>
+			<p>year : {{album.year}}</p><br>
 			<p>{{album.description}}</p>
 
 			<a [routerLink]="['/crear-tema', album._id]" class="btn btn-default" *ngIf="identity.role == 'ROLE_ADMIN'">
@@ -25,7 +25,7 @@
 						<span class="glyphicon glyphicon-play" aria-hidden="true"></span>
 					</a>
 
-					{{song.number + '. '+ song.name + ' - '+ song.duration}}
+				<p>{{song.number + '. '+ song.name + ' - '+ song.duration}}</p>	
 
 					<div class="buttons" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
 						<a [routerLink]="['/editar-tema', song._id]" class="">

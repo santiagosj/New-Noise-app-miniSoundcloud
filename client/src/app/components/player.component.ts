@@ -16,7 +16,7 @@ import {GLOBAL} from '../services/global';
 	</div>
 
 	<div class="audio-file">
-		<p>Reproduciendo</p>
+		<p>Playing :   </p>
 		<span id="play-song-title">
 			{{song.name}}
 		</span>
