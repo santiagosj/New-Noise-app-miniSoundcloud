@@ -20,7 +20,7 @@ import {GLOBAL} from '../services/global';
 		<span id="play-song-title">
 			{{song.name}}
 		</span>
-		|
+		  | |
 		<span id="play-song-artist">
 			<span *ngIf="song.album.artist">
 				{{song.album.artist.name}}

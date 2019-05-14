@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers,RequestOptions } from '@angular/http';
+import {  HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators'
 import { Observable } from 'rxjs';
 import { GLOBAL } from './global';
@@ -9,7 +9,7 @@ export class UploadService {
   public url:string;
 
 
-  constructor(private _http: Http){
+  constructor(private _http: HttpClient){
     this.url = GLOBAL.url;
   }
 

@@ -1,6 +1,5 @@
 import{Component, OnInit}from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-
 import { GLOBAL } from '../services/global';
 import { UserService } from '../services/user.service';
 import { ArtistService } from '../services/artist.service';
@@ -29,7 +28,7 @@ export class ArtistListComponent implements OnInit {
     private _artistService:ArtistService
 
   ){
-    this.titulo ='Artistas';
+    this.titulo ='Artists';
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
     this.url = GLOBAL.url;
@@ -56,7 +55,7 @@ export class ArtistListComponent implements OnInit {
         }
       }
 
-      this._artistService.getArtists(this.token, page).subscribe(
+      this._artistService.getArtists().subscribe(
         response=>{
         if(!response.artists){
           this._router.navigate(['/']);
@@ -88,15 +87,17 @@ onCancelArtist(){
 }
 
 onDeleteArtist(id){
-  this._artistService.deleteArtist(this.token, id).subscribe(
+  
+  this._artistService.deleteArtist(id).subscribe(
     response =>{
-    if(!response.artistRemoved){
+    if(!response){
       alert('Error en el servidor');
       console.log(response);
     }
     this.getArtists();
   },
     error=>{
+
     var errorMessage = <any>error;
 
     if(errorMessage != null){

@@ -49,7 +49,7 @@ export class ArtistEditComponent implements OnInit{
     this._route.params.forEach((params:Params)=>{
       let id = params['id'];
 
-      this._artistService.getArtist(this.token, id).subscribe(
+      this._artistService.getArtist( id).subscribe(
         response => {
           if(!response.artist){
             this._router.navigate(['/']);
@@ -73,18 +73,18 @@ export class ArtistEditComponent implements OnInit{
   }
 
   onSubmit(){
-    console.log(this.artist)
+   
     this._route.params.forEach((params: Params) => {
       let id = params['id'];
 
-    this._artistService.editArtist(this.token, id, this.artist).subscribe(
+    this._artistService.editArtist(id, this.artist).subscribe(
       response => {
         if(!response.artist){
           this.alertMessage = 'Error en el servidor!';
         }else{
           this.alertMessage = 'El artista ha sido editado correctamente';
           if(!this.filesToUpload){
-            this._router.navigate(['/artista', response.artist._id ]);
+            this._router.navigate(['/artista', response.artist._id]);
           }else{
 
           //subir la imagen

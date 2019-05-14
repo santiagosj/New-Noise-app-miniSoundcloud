@@ -1,4 +1,5 @@
-<div class="col-lg-6" *ngIf="identity && identity.role=='ROLE_ADMIN'">
+<!--FORMULARIO PARA AÑADIR ARTISTA -->
+<div class="col-lg-6 artistForm" *ngIf="identity && identity.role=='ROLE_ADMIN'"><!--SI EL USUARIO ES ADMIN-->
   <h1>{{titulo}}</h1>
 
   <div *ngIf="alertMessage">
@@ -6,6 +7,8 @@
       {{alertMessage}}
     </div>
   </div>
+
+  <!--FORMULARIO-->
 
   <form #formArtist="ngForm" (ngSubmit)="onSubmit()" >
   <p>
@@ -20,19 +23,20 @@
     <span *ngIf="!description.valid && description.touched">Describe tu proyecto</span>
   </p>
 
-<div *ngIf="is_edit">
-  <div class="artist_image_for_edit"
-  *ngIf="artist.image && artist.image != 'null'">
-    <img src="{{url + 'get-image-artist/' + artist.image}}"/>
-  </div>
+       <div *ngIf="is_edit">
 
-  <p>
-    <label>Cambia la imagen desde aquí</label>
-    <input type="file"placeholder="Sube tu imagen" (change)="fileChangeEvent($event)" >
-  </p>
-</div>
+         <div class="artist_image_for_edit" *ngIf="artist.image && artist.image != 'null'">
+             <img src="{{url + 'get-image-artist/' + artist.image}}"/>
+        </div>
 
-  <input type="submit" value="{{titulo}}" [disabled]="!formArtist.form.valid" class="btn btn-success"/>
+        <p>
+             <label>Cambia la imagen desde aquí</label>
+             <input type="file"placeholder="Sube tu imagen" (change)="fileChangeEvent($event)" >
+        </p>
+
+     </div>
+
+     <input type="submit" value="{{titulo}}" [disabled]="!formArtist.form.valid" class="btnAdd"/>
   </form>
 
 </div>
@@ -40,4 +44,4 @@
 <div class="col-lg-6" *ngIf="!identity || identity.role != 'ROLE_ADMIN'">
    <h1>Error</h1>
    <p>Espacio solo permitido para administrador</p>
- </div>
+</div>

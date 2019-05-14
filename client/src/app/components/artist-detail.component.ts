@@ -22,8 +22,6 @@ export class ArtistDetailComponent implements OnInit{
   public alertMessage;
   public url: string;
 
-
-
   constructor(
     private _route: ActivatedRoute,
     private _router:Router,
@@ -37,7 +35,7 @@ export class ArtistDetailComponent implements OnInit{
 
   }
   ngOnInit(){
-    console.log('Artists-add.component cargado');
+    console.log('Artists-detail.component cargado');
     //llamar al metodo del api para sacar una artista en base a su id getArtist()
 
       this.getArtist();
@@ -47,7 +45,7 @@ export class ArtistDetailComponent implements OnInit{
     this._route.params.forEach((params:Params)=>{
       let id = params['id'];
       
-      this._artistService.getArtist(this.token, id).subscribe(
+      this._artistService.getArtist(id).subscribe(
         response => {
           if(!response.artist){
             this._router.navigate(['/']);
@@ -55,7 +53,7 @@ export class ArtistDetailComponent implements OnInit{
             this.artist = response.artist;
             // Sacar los albums del artista
 
-            this._albumService.getAlbums(this.token, response.artist._id).subscribe(
+            this._albumService.getAlbums().subscribe(
               response=>{
               if(!response.albums){
                 this.alertMessage = 'Este artista no tiene albums';
@@ -95,7 +93,7 @@ export class ArtistDetailComponent implements OnInit{
   }
 
   onDeleteAlbum(id){
-    this._albumService.deleteAlbum(this.token, id).subscribe(
+    this._albumService.deleteAlbum(id).subscribe(
       response=>{
        if(!response.album){
           this._router.navigate(['/']);

@@ -57,7 +57,7 @@ export class AlbumListComponent implements OnInit{
         }
       }
 
-      this._albumService.getAlbums(this.token, id).subscribe(
+      this._albumService.getAlbums().subscribe(
         response =>{
           if(!response.albums){
             this._router.navigate(['/']);

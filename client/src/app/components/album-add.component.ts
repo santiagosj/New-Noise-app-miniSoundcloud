@@ -48,7 +48,7 @@ export class AlbumAddComponent implements OnInit{
       let artist_id = params['artist']
       this.album.artist = artist_id;
 
-      this._albumService.addAlbum(this.token, this.album).subscribe(
+      this._albumService.addAlbum(this.album).subscribe(
         response=>{
         if(!response.album){
           this.alertMessage = 'Error en el servidor';

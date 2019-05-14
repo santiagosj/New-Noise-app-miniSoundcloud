@@ -23,8 +23,7 @@ export class AlbumDetailComponent implements OnInit{
   public alertMessage;
   public url: string;
 
-
-
+  
   constructor(
     private _route: ActivatedRoute,
     private _router:Router,
@@ -49,7 +48,7 @@ export class AlbumDetailComponent implements OnInit{
     this._route.params.forEach((params:Params)=>{
       let id = params['id'];
 
-      this._albumService.getAlbum(this.token, id).subscribe(
+      this._albumService.getAlbum(id).subscribe(
         response => {
           if(!response.album){
             this._router.navigate(['/']);
@@ -57,7 +56,7 @@ export class AlbumDetailComponent implements OnInit{
             this.album = response.album;
             // Sacar las canciones
 
-            this._songService.getSongs(this.token, response.album._id).subscribe(
+            this._songService.getSongs(response.album._id).subscribe(
               response=>{
               if(!response.songs){
                 this.alertMessage = 'Este album no tiene canciones';
@@ -97,7 +96,7 @@ export class AlbumDetailComponent implements OnInit{
   }
 
   onDeleteSong(id){
-    this._songService.deleteSong(this.token, id).subscribe(
+    this._songService.deleteSong(id).subscribe(
       response => {
         if(!response.song){
           alert('Error ene el servidor');

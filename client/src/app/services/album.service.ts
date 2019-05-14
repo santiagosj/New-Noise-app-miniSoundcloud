@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers,RequestOptions } from '@angular/http';
-import { map } from 'rxjs/operators'
+import {  HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { GLOBAL } from './global';
 import { Album } from '../models/album';
@@ -10,67 +9,41 @@ export class AlbumService {
   public url:string;
 
 
-  constructor(private _http: Http){
+  constructor(private _http: HttpClient){
     this.url = GLOBAL.url;
   }
 
-getAlbum(token, id:string){
-  let headers = new Headers({
-    'Content-Type':'application/json',
-    'Authorization':token
-  });
-
-  let options = new RequestOptions({ headers: headers });
-      return this._http.get(this.url+'album/'+id, options)
-                .pipe(map(res => res.json()));
+getAlbum(id:string):Observable<any>{
+  return this._http.get(this.url +'album'+id)
 }
 
-getAlbums(token, artistId = null){
-  let headers = new Headers({
-    'Content-Type':'application/json',
-    'Authorization':token
-  });
-     let options = new RequestOptions({ headers: headers });
-     if(artistId == null){
-             return this._http.get(this.url+'albums/', options)
-                        .pipe(map(res => res.json()));
-      }else{
-        return this._http.get(this.url+'albums/'+ artistId, options)
-                   .pipe(map(res => res.json()));
-      }
+getAlbums():Observable<any>{
+  return this._http.get(this.url+'albums');
 }
 
 
-addAlbum(token, album: Album){
-  let params = JSON.stringify(album);
-  let headers = new Headers({
-    'Content-Type':'application/json',
-    'Authorization':token
-  });
-  return this._http.post(this.url+ 'album', params,{headers:headers})
-                   .pipe(map(res => res.json()));
+addAlbum(album: Album):Observable<any>{
+  let json = JSON.stringify(album);
+  let params = "json="+json;
+  let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
+
+      return this._http.post(this.url+'albums', params, {headers: headers})
   }
 
 
-  editAlbum(token, id:string, album:Album){
-    let params = JSON.stringify(album);
-    let headers = new Headers({
-      'Content-Type':'application/json',
-      'Authorization':token
-    })
+  editAlbum(id:string, album:Album):Observable<any>{
+    let json = JSON.stringify(album);
+    let params = "json="+json;
+    let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded')
+
      return this._http.put(this.url+'album/'+ id, params, {headers:headers})
-                         .pipe(map(res => res.json()));
+                         
   }
 
-  deleteAlbum(token, id:string){
-    let headers = new Headers({
-      'Content-Type':'application/json',
-      'Authorization':token
-    });
+  deleteAlbum(id:string):Observable<any>{
+    let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded')
 
-    let options = new RequestOptions({ headers: headers });
-        return this._http.delete(this.url+'album/'+id, options)
-                  .pipe(map(res => res.json()));
+        return this._http.delete(this.url+'album/'+id, {headers:headers})
   }
 
 }

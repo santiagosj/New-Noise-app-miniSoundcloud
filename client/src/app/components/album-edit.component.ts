@@ -48,7 +48,7 @@ export class AlbumEditComponent implements OnInit{
     this._route.params.forEach((params:Params) =>{
       let id = params['id'];
 
-         this._albumService.getAlbum(this.token, id).subscribe(
+         this._albumService.getAlbum(id).subscribe(
            response=>{
            if(!response.album){
              this._router.navigate(['/']);
@@ -72,7 +72,7 @@ export class AlbumEditComponent implements OnInit{
     this._route.params.forEach((params:Params) =>{
       let id = params['id']
 
-      this._albumService.editAlbum(this.token, id, this.album).subscribe(
+      this._albumService.editAlbum(this.token, id).subscribe(
         response=>{
         if(!response.album){
           this.alertMessage = 'Error en el servidor';
@@ -84,7 +84,7 @@ export class AlbumEditComponent implements OnInit{
           }else{
             this._uploadService.makeFileRequest(this.url+'upload-image-album/'+id, [], this.filesToUpload,this.token,'image')
             .then(
-              (resul)=>{
+              ()=>{
                 this._router.navigate(['/artista', response.album.artist]);
               },
               (error)=>{
