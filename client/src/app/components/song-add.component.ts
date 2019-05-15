@@ -43,7 +43,7 @@ export class SongAddComponent implements OnInit{
       let album_id = params['album']
       this.song.album = album_id;
         console.log(this.song);
-      this._songService.addSong(this.song).subscribe(
+      this._songService.addSong(this.token,this.song).subscribe(
         response=>{
 
         if(!response.song){

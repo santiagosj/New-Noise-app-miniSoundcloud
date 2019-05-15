@@ -45,7 +45,7 @@ export class ArtistDetailComponent implements OnInit{
     this._route.params.forEach((params:Params)=>{
       let id = params['id'];
       
-      this._artistService.getArtist(id).subscribe(
+      this._artistService.getArtist(this.token, id).subscribe(
         response => {
           if(!response.artist){
             this._router.navigate(['/']);
@@ -53,7 +53,7 @@ export class ArtistDetailComponent implements OnInit{
             this.artist = response.artist;
             // Sacar los albums del artista
 
-            this._albumService.getAlbums().subscribe(
+            this._albumService.getAlbums(this.token, response.artist._id).subscribe(
               response=>{
               if(!response.albums){
                 this.alertMessage = 'Este artista no tiene albums';
@@ -93,7 +93,7 @@ export class ArtistDetailComponent implements OnInit{
   }
 
   onDeleteAlbum(id){
-    this._albumService.deleteAlbum(id).subscribe(
+    this._albumService.deleteAlbum(this.token,id).subscribe(
       response=>{
        if(!response.album){
           this._router.navigate(['/']);

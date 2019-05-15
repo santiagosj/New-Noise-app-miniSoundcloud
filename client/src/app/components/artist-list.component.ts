@@ -55,7 +55,7 @@ export class ArtistListComponent implements OnInit {
         }
       }
 
-      this._artistService.getArtists().subscribe(
+      this._artistService.getArtists(this.token, page).subscribe(
         response=>{
         if(!response.artists){
           this._router.navigate(['/']);
@@ -88,7 +88,7 @@ onCancelArtist(){
 
 onDeleteArtist(id){
   
-  this._artistService.deleteArtist(id).subscribe(
+  this._artistService.deleteArtist(this.token, id).subscribe(
     response =>{
     if(!response){
       alert('Error en el servidor');

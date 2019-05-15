@@ -40,7 +40,7 @@ export class ArtistAddComponent implements OnInit{
 
   onSubmit(){
     console.log(this.artist)
-    this._artistService.addArtist( this.artist).subscribe(
+    this._artistService.addArtist( this.token, this.artist).subscribe(
       response => {
 
         if(!response.artist){

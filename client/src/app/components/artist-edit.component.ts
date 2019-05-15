@@ -49,7 +49,7 @@ export class ArtistEditComponent implements OnInit{
     this._route.params.forEach((params:Params)=>{
       let id = params['id'];
 
-      this._artistService.getArtist( id).subscribe(
+      this._artistService.getArtist( this.token,id).subscribe(
         response => {
           if(!response.artist){
             this._router.navigate(['/']);
@@ -77,7 +77,7 @@ export class ArtistEditComponent implements OnInit{
     this._route.params.forEach((params: Params) => {
       let id = params['id'];
 
-    this._artistService.editArtist(id, this.artist).subscribe(
+    this._artistService.editArtist(this.token, id, this.artist).subscribe(
       response => {
         if(!response.artist){
           this.alertMessage = 'Error en el servidor!';

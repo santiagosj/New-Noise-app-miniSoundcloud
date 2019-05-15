@@ -47,7 +47,7 @@ export class SongEditComponent implements OnInit{
       this._route.params.forEach((params:Params)=>{
         let id= params['id']
 
-         this._songService.getSong(id).subscribe(
+         this._songService.getSong(this.token,id).subscribe(
            response=>{
            if(!response.song){
              this._router.navigate(['/']);
@@ -75,7 +75,7 @@ export class SongEditComponent implements OnInit{
     this._route.params.forEach((params:Params) =>{
       let id = params['id']
 
-      this._songService.editSong(id, this.song).subscribe(
+      this._songService.editSong(this.token, id, this.song).subscribe(
         response=>{
 
         if(!response.song){

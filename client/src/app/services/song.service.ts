@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {  HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators'
 import { Observable } from 'rxjs';
 import { GLOBAL } from './global';
 import { Song } from '../models/song';
@@ -13,37 +12,48 @@ export class SongService {
     this.url = GLOBAL.url;
   }
 
-getSong(id:string):Observable<any>{
-  return this._http.get(this.url+'song'+id);
+getSong(token, id:string):Observable<any>{
+  let headers = new HttpHeaders({
+    'Content-Type':'application/json',
+    'Authorization':token
+  });
+  return this._http.get(this.url+'song/'+id, {headers:headers});
 }
 
-getSongs(albumId = null):Observable<any>{
+
+getSongs(token, albumId = null):Observable<any>{
+     let headers = new HttpHeaders({
+       'Content-Type':'application/json',
+       'Authorization':token
+      })
+     
      if(albumId == null){
-             return this._http.get(this.url+'songs')
-              
-      }else{
-        return this._http.get(this.url+'songs/'+ albumId)
-                   
+          return this._http.get(this.url+'songs',{headers:headers})
+      } else {
+          return this._http.get(this.url+'songs/'+ albumId ,{headers:headers})          
       }
 }
 
-addSong(song: Song):Observable<any>{
+addSong(token, song: Song):Observable<any>{
   let params = JSON.stringify(song);
-  let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-  return this._http.post(this.url+'song', params,{headers:headers})                 
+  let headers = new HttpHeaders({'Content-Type':'application/json',
+  'Authorization':token})
+  return this._http.post(this.url+'song', params, {headers:headers})                 
   }
 
 
-  editSong(id:string, song: Song):Observable<any>{
+  editSong(token, id:string, song: Song):Observable<any>{
     let params = JSON.stringify(song);
-    let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
+    let headers = new HttpHeaders({'Content-Type':'application/json',
+    'Authorization':token})
      return this._http.put(this.url+'song/'+ id, params, {headers:headers})
                          
   }
 
-  deleteSong(id:string):Observable<any>{
-    let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-        return this._http.delete(this.url+'song/'+id, {headers:headers})            
+  deleteSong(token, id:string):Observable<any>{
+    let headers = new HttpHeaders({'Content-Type':'application/json',
+    'Authorization':token})
+    return this._http.delete(this.url+'song/'+id, {headers:headers})            
   }
 
 }
