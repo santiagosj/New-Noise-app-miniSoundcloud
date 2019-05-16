@@ -1,0 +1,98 @@
+                      
+                           //MENU DE NAVEGACION                      
+/*==================================================================*/
+.menu-contenedor{
+
+    #nav{
+        .itemNav{
+
+        }
+    }
+
+    #userLog{
+        
+        .imgLog{
+
+        }
+        #identity_name{
+
+        }
+
+        .itemLog{
+            
+        }
+
+    }
+
+}
+                             //VISTA PIRNCIPAL
+/*=======================================================================*/
+
+.central{
+    
+}
+
+
+                           //FORMULARIO LOGIN Y SIGNUP
+/*=======================================================================*/
+.landing{
+     position: fixed;
+     width: 100%;
+     height: 100%;
+    .mask{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: #ff7c7c;
+    }
+
+    .formSignupLoginContainer{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        text-align: center;
+        justify-content: center;
+        top:65px;
+
+         .login, .signup{
+             background-color: #0000008a;
+             color:white;
+             width: 30%;
+             height: 500px;
+             display: inline-block;
+   
+             .form{
+               height: 360px;
+               position: relative;
+               top:30px;
+   
+               .alert{
+                   position: absolute;
+                   right: 130px;
+                   color: #ff7c7c;
+               }   
+                 input{
+                   width: 70%;
+                   height: 43px;
+                   background-color: transparent;
+                   border: none;
+                   border-bottom: white 1px solid;
+                   color: white;
+                   font-size: 20px;
+                   padding: 0;
+                   text-align: center;
+                   margin-bottom: 10px;
+                   &:focus {
+                       outline-width: 0;
+                       font-size: 25px;
+                   }
+                 }
+             }
+         }
+   
+             
+   }
+}
+

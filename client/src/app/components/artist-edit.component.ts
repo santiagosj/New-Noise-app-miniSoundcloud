@@ -9,7 +9,8 @@ import { Artist } from '../models/artist';
 
 @Component({
   selector: 'artist-edit',
-	templateUrl: '../views/artist-add.html',
+  templateUrl: '../views/artist-add.html',
+  styleUrls:['../../assets/styles/form.scss','../../assets/styles/buttons.scss'],
 	providers: [UserService, ArtistService, UploadService]
 })
 

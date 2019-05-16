@@ -8,7 +8,8 @@ import { Song } from '../models/song';
 
 @Component({
   selector: 'song-add',
-	templateUrl: '../views/song-add.html',
+  templateUrl: '../views/song-add.html',
+  styleUrls:['../../assets/styles/form.scss','../../assets/styles/buttons.scss'],
 	providers: [UserService, SongService]
 })
 

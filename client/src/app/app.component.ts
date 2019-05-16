@@ -9,7 +9,8 @@ import { User } from './models/user';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-    providers: [UserService]
+  styleUrls:['./app.component.scss','../assets/styles/buttons.scss'],
+  providers: [UserService]
 })
 
 export class AppComponent implements OnInit {

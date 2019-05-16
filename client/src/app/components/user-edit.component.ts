@@ -8,6 +8,7 @@ import { User } from '../models/user';
 @Component({
 	selector: 'user-edit',
 	templateUrl: '../views/user-edit.html',
+	styleUrls:['../../assets/styles/form.scss','../../assets/styles/buttons.scss'],
 	providers: [UserService]
 })
 

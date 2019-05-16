@@ -10,7 +10,8 @@ import { Album } from '../models/album';
 
 @Component({
   selector: 'album-add',
-	templateUrl: '../views/album-add.html',
+  templateUrl: '../views/album-add.html',
+  styleUrls:['../../assets/styles/form.scss','../../assets/styles/buttons.scss'],
 	providers: [UserService, ArtistService, AlbumService]
 })
 

@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { GLOBAL } from './global';
 import { Album } from '../models/album';
 
-
 @Injectable() //decorador
 
 export class AlbumService {
@@ -18,8 +17,10 @@ export class AlbumService {
 //get alubum   
 getAlbum(token, id:string):Observable<any>{
   //configuracion de cabeceras 
-  let headers = new HttpHeaders({'Content-Type':'application/json',
-  'Authorization':token})
+  let headers = new HttpHeaders({
+    'Content-Type':'application/json',
+    'Authorization':token
+   })
   //devuelve el album con su respectivo id
   return this._http.get(this.url +'album/'+id, {headers:headers})
 }
@@ -27,8 +28,10 @@ getAlbum(token, id:string):Observable<any>{
 
 getAlbums(token, artistId = null):Observable<any>{
 //configuracion de cabeceras 
-  let headers = new HttpHeaders({'Content-Type':'application/json',
-  'Authorization':token})
+  let headers = new HttpHeaders({
+    'Content-Type':'application/json',
+    'Authorization':token
+  })
    //si el id del artista es null devuelve todos los discos en la base de datos, sino devuelve los discos del artista
   if(artistId == null){
     return this._http.get(this.url+'albums/',{headers:headers});
@@ -39,11 +42,13 @@ getAlbums(token, artistId = null):Observable<any>{
 }
 
 
-addAlbum(token,album: Album):Observable<any>{
+addAlbum(token, album: Album):Observable<any>{
   let json = JSON.stringify(album);
   let params = "json="+json;
-  let headers = new HttpHeaders({'Content-Type':'application/json',
-  'Authorization':token})
+  let headers = new HttpHeaders({
+    'Content-Type':'application/json',
+    'Authorization':token
+ })
 
       return this._http.post(this.url+'album', params, {headers: headers})
                       
@@ -53,8 +58,10 @@ addAlbum(token,album: Album):Observable<any>{
   editAlbum(token, id:string, album:Album):Observable<any>{
     let json = JSON.stringify(album);
     let params = "json="+json;
-    let headers = new HttpHeaders({ 'Content-Type':'application/json',
-    'Authorization':token})
+    let headers = new HttpHeaders({ 
+      'Content-Type':'application/json',
+      'Authorization':token
+    })
 
      return this._http.put(this.url+'album/'+ id, params, {headers:headers})
                          
@@ -62,8 +69,10 @@ addAlbum(token,album: Album):Observable<any>{
 
   deleteAlbum(token, id:string):Observable<any>{
 
-    let headers = new HttpHeaders({'Content-Type':'application/json',
-    'Authorization':token})
+    let headers = new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization':token
+    })
 
         return this._http.delete(this.url+'album/'+id, {headers:headers})
   }
