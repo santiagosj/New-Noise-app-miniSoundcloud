@@ -10,7 +10,7 @@ import { Song } from '../models/song';
 @Component({
   selector: 'song-edit',
   templateUrl: '../views/song-add.html',
-  styleUrls:['../../assets/styles/form.scss','../../assets/styles/buttons.scss'],
+  styleUrls:['../../assets/styles/form.scss','../../assets/styles/buttons.scss','../app.component.scss'],
 	providers: [UserService, SongService, UploadService]
 })
 

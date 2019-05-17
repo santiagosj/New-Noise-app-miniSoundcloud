@@ -9,7 +9,7 @@ import { Song } from '../models/song';
 @Component({
   selector: 'song-add',
   templateUrl: '../views/song-add.html',
-  styleUrls:['../../assets/styles/form.scss','../../assets/styles/buttons.scss'],
+  styleUrls:['../../assets/styles/form.scss','../../assets/styles/buttons.scss','../app.component.scss'],
 	providers: [UserService, SongService]
 })
 

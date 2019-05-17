@@ -32,7 +32,8 @@ import {GLOBAL} from '../services/global';
 		</audio>
 	</div>
 
-	`
+	`,
+	styleUrls:['../../assets/styles/player.scss','../app.component.scss']
 })
 
 export class PlayerComponent implements OnInit{

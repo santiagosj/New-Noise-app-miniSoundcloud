@@ -32,18 +32,82 @@
     
 }
 
-
                            //FORMULARIO LOGIN Y SIGNUP
 /*=======================================================================*/
-.landing{
-     position: fixed;
-     width: 100%;
-     height: 100%;
-    .mask{
-        width: 100%;
+
+.img-header, .img-header::after {
+    height: 350px;
+    width: 100%;
+    z-index: 0;
+  }
+  
+  .img-header {
+
+    div{
+
+      .sliderImg{
         height: 100%;
+        width: 100%;
         position: absolute;
-        background: #ff7c7c;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center;
+        color: transparent;
+        z-index: 0;
+        opacity: 0;
+        animation: imageAnimation 36s linear infinite 0s;
+      }
+    }
+
+    div:nth-child(1) .sliderImg {
+        background-image: url(https://www.creativeboom.com/uploads/articles/cb/cbd456ba7b4c73d19a2cf49e0c989414e19a9360_2200.jpg);
+      } 
+    div:nth-child(2) .sliderImg {
+         background-image: url(https://www.creativeboom.com/uploads/articles/3b/3bfb6f1961dd8c557c75ec7b43f58525806b901d_2200.jpg);
+         animation-delay: 6s;
+      }
+    div:nth-child(3) .sliderImg {
+         background-image: url(https://www.creativeboom.com/uploads/articles/44/445ad35c20932b8e855c2c550ce746d0f576fa9f_2200.jpg);
+         animation-delay: 12s;
+      }
+    div:nth-child(4) .sliderImg {
+         background-image: url(https://www.creativeboom.com/uploads/articles/e2/e25814b58f578998395aca6ab5d23774fe667501_2200.jpg);
+         animation-delay: 18s;
+      }
+
+    div:nth-child(5) .sliderImg {
+         background-image: url(https://www.creativeboom.com/uploads/articles/6d/6d2f946d9767560e2fa21a0bed5b2be84dd93dc7_2200.jpg);
+         animation-delay: 24s;
+      }  
+    div:nth-child(6) .sliderImg {
+         background-image: url(https://www.creativeboom.com/uploads/articles/60/60ecac51336a7df9cb43923979eaced2a5387181_2200.jpg);
+         animation-delay: 30s;
+     }
+     
+  }
+  
+  
+  @keyframes imageAnimation {
+      0% { opacity: 0; animation-timing-function: ease-in; }
+      8% { opacity: 1; animation-timing-function: ease-out; }
+      17% { opacity: 1 }
+      25% { opacity: 0 }
+      100% { opacity: 0 }
+  }
+
+.landing{
+      position: fixed;
+      width: 100%;
+      height: 100%;
+
+    .mask{
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       top: 0px;
+       left: 0px;
+       z-index: 0; 
+       background: transparent url(../assets/images/pattern.png) repeat top left;
     }
 
     .formSignupLoginContainer{
@@ -55,44 +119,45 @@
         text-align: center;
         justify-content: center;
         top:65px;
-
+          .login{
+            border-right: 1px solid white;
+          }
          .login, .signup{
-             background-color: #0000008a;
+             background-color: #000000c9;
              color:white;
              width: 30%;
              height: 500px;
              display: inline-block;
-   
-             .form{
-               height: 360px;
-               position: relative;
-               top:30px;
-   
-               .alert{
-                   position: absolute;
-                   right: 130px;
-                   color: #ff7c7c;
-               }   
-                 input{
-                   width: 70%;
-                   height: 43px;
-                   background-color: transparent;
-                   border: none;
-                   border-bottom: white 1px solid;
-                   color: white;
-                   font-size: 20px;
-                   padding: 0;
-                   text-align: center;
-                   margin-bottom: 10px;
-                   &:focus {
-                       outline-width: 0;
-                       font-size: 25px;
-                   }
-                 }
-             }
-         }
-   
              
-   }
+   
+         .form{
+            height: 360px;
+            position: relative;
+            top:30px;
+   
+            .alert{
+                position: absolute;
+                right: 130px;
+                color: #ff7c7c;
+                }   
+            input{
+                width: 70%;
+                height: 43px;
+                background-color: transparent;
+                border: none;
+                border-bottom: white 1px solid;
+                color: white;
+                font-size: 20px;
+                padding: 0;
+                text-align: center;
+                margin-bottom: 10px;
+                &:focus {
+                  outline-width: 0;
+                  font-size: 25px;
+                }
+              } 
+            }
+          }
+    }
 }
 

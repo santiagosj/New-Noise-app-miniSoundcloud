@@ -10,6 +10,7 @@ import { Album } from '../models/album';
 @Component({
   selector:'album-list',
   templateUrl: '../views/album-list.html',
+  styleUrls:['../app.component.scss'],
   providers:[UserService, AlbumService]
 })
 
