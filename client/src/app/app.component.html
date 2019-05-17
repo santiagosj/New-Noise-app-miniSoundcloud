@@ -48,10 +48,8 @@
 <!--================================================================================-->
 
 <div *ngIf="identity" class="central">
-
+  <div class="mask"></div>
     <router-outlet></router-outlet>
-
-    <div class="clearfix"></div>
 
     <player class="player" *ngIf="identity"></player>
 

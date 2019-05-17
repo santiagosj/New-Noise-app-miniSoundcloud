@@ -7,6 +7,7 @@
     background-color: #3a3a3a;
     color:white;
     overflow: hidden;
+    height: 77px;
 
     a{
       color: white;
@@ -58,8 +59,47 @@
 /*=======================================================================*/
 
 .central{
-    
-}
+     background-color: #3a3a3ad4;
+     position: relative;
+     
+     .mask{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0px;
+          left: 0px;
+          z-index: 0; 
+          background: transparent url(../assets/images/pattern.png) repeat top left;
+       }
+
+      .player{
+           position: relative;
+       
+       }//end player
+
+    }//end central
+
+    .home{
+      
+      .home-div{ 
+        position: relative;
+
+          h1,h2,h3{
+            position: inherit;
+            z-index: 1;
+            font-size: 9vw;
+            color: white;
+
+            a{
+              text-decoration: none;
+              color: aliceblue;
+             }
+
+          }
+
+       }
+
+    }
 
                            //FORMULARIO LOGIN Y SIGNUP
 /*=======================================================================*/

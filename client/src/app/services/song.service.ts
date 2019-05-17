@@ -36,23 +36,29 @@ getSongs(token, albumId = null):Observable<any>{
 
 addSong(token, song: Song):Observable<any>{
   let params = JSON.stringify(song);
-  let headers = new HttpHeaders({'Content-Type':'application/json',
-  'Authorization':token})
+  let headers = new HttpHeaders({
+    'Content-Type':'application/json',
+     'Authorization':token
+    })
   return this._http.post(this.url+'song', params, {headers:headers})                 
   }
 
 
   editSong(token, id:string, song: Song):Observable<any>{
     let params = JSON.stringify(song);
-    let headers = new HttpHeaders({'Content-Type':'application/json',
-    'Authorization':token})
+    let headers = new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization':token
+    })
      return this._http.put(this.url+'song/'+ id, params, {headers:headers})
                          
   }
 
   deleteSong(token, id:string):Observable<any>{
-    let headers = new HttpHeaders({'Content-Type':'application/json',
-    'Authorization':token})
+    let headers = new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization':token
+    })
     return this._http.delete(this.url+'song/'+id, {headers:headers})            
   }
 

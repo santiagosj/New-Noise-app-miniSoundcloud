@@ -28,12 +28,12 @@ import {GLOBAL} from '../services/global';
 		</span>
 		<audio controls id="player">
 			<source id="mp3-source" src="{{ url + 'get-song-file/' + song.file }}" type="audio/mpeg">
-			Tu navegador no es compatible con HTML5
+			 Tu navegador no es compatible con HTML5
 		</audio>
 	</div>
 
 	`,
-	styleUrls:['../../assets/styles/player.scss','../app.component.scss']
+	styleUrls:['../app.component.scss','../../assets/styles/player.scss']
 })
 
 export class PlayerComponent implements OnInit{
@@ -48,6 +48,7 @@ export class PlayerComponent implements OnInit{
 		console.log('player cargado');
 
 		var song = JSON.parse(localStorage.getItem('sound_song'));
+		
 		if(song){
 			this.song = song;
 		}else{
