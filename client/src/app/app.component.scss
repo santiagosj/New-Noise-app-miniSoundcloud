@@ -2,29 +2,58 @@
                            //MENU DE NAVEGACION                      
 /*==================================================================*/
 .menu-contenedor{
+    display: flex;
+    flex-direction: row;
+    background-color: #3a3a3a;
+    color:white;
+    overflow: hidden;
 
-    #nav{
-        .itemNav{
-
-        }
+    a{
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
     }
-
     #userLog{
+       width: 25%;
         
-        .imgLog{
-
-        }
-        #identity_name{
-
-        }
-
+        .user-image{
+            height: 48px;
+            width: 48px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0;
+            position: absolute;
+            left: 50px;
+            top: 13px;
+              img {
+                width: 49px;
+              }
+         }
+        
         .itemLog{
-            
+            position: relative;
+            left: 100px;
+            top:29px;
+            padding-left: 8%;
         }
 
     }
 
+    #nav {
+      display: flex;
+      height: 100%;
+      width: 25%;
+      position: relative;
+      top: 29px;
+      padding-left: 36%;
+      .itemNav{
+          padding-left: 15%;
+       }
+
+   }
+      
 }
+
                              //VISTA PIRNCIPAL
 /*=======================================================================*/
 

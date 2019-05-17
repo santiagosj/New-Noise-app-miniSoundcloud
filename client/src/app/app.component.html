@@ -1,8 +1,24 @@
 
 <!-- Menu de navegacion -->
-
 <div *ngIf="identity" class="menu-contenedor">
+<!--MENU USUARIO-->
+  <nav id="userLog">
 
+    <div class="user-image" >
+      <img id="imgLog" src="{{url + 'get-image-user/' + identity.image}}" >
+    </div>
+
+       <a class="itemLog" [routerLink]="['/mis-datos']" [routerLinkActive]="['actived']">
+          <span aria-hidden="true">{{identity.name}}</span>
+      </a>
+
+      <a class="itemLog" (click)="logout()" >
+         <span  aria-hidden="true">Salir</span>
+      </a>
+
+  </nav>
+
+<!--TITULO APP-->
   <h1 class="head-title">
     <a [routerLink]="['/']">
       <span class="" aria-hidden="true"></span>
@@ -10,34 +26,20 @@
     </a>
   </h1>
 
+<!--MENU APP-->
   <nav id="nav">
-    <a [routerLink]="['/home']" [routerLinkActive]="['actived']">
-      <span class="itemNav" aria-hidden="true"></span>
+     <a class="itemNav" [routerLink]="['/home']" [routerLinkActive]="['actived']">
+      <span  aria-hidden="true"></span>
       SEARCH
     </a>
-    <a [routerLink]="['/artistas', 1]" [routerLinkActive]="['actived']">
-      <span class="itemNav" aria-hidden="true"></span>
+    <a class="itemNav" [routerLink]="['/artistas', 1]" [routerLinkActive]="['actived']">
+      <span  aria-hidden="true"></span>
       ARTISTS
     </a>
-    <a [routerLink]="['/albums', 1]" [routerLinkActive]="['actived']">
-      <span class="itemNav" aria-hidden="true"></span>
+    <a class="itemNav" [routerLink]="['/albums', 1]" [routerLinkActive]="['actived']">
+      <span  aria-hidden="true"></span>
       ALBUMS
     </a>
-  </nav>
-
-  <nav id="userLog">
-    <div class="user-image" >
-      <img id="imgLog" src="{{url + 'get-image-user/' + identity.image}}" >
-    </div>
-    <span id="identity_name">{{identity.name}}</span> <br>
-       <a [routerLink]="['/mis-datos']" [routerLinkActive]="['actived']">
-      <span class="itemLog" aria-hidden="true"></span>
-      Mis datos
-    </a>
-    <a (click)="logout()" >
-   <span class="itemLog" aria-hidden="true"></span>
-      Salir
-   </a>
   </nav>
 
 </div>
