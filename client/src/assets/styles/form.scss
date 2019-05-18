@@ -1,5 +1,44 @@
-.form{
-    .form-input{
-        
-    }
-}
+.userFormContainer{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+   
+     .form{
+        position: relative;
+        height: 600px;
+        width: 37%;
+        background-color: #000000c9;
+        top:30px;
+        h1{
+            position: relative;
+            top: 7%;
+          }   
+        .inputHolder{
+            position: relative;
+            top: 10%;
+        }
+        .alert{
+            position: absolute;
+            right: 130px;
+            color: #ff7c7c;
+            }   
+        input{
+            width: 70%;
+            height: 43px;
+            background-color: transparent;
+            border: none;
+            border-bottom: white 1px solid;
+            color: white;
+            font-size: 20px;
+            padding: 0;
+            text-align: center;
+            margin-bottom: 10px;
+            &:focus {
+              outline-width: 0;
+              font-size: 25px;
+            }
+          } 
+        }
+      }
