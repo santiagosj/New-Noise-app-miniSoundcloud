@@ -8,6 +8,12 @@
     color:white;
     overflow: hidden;
     height: 77px;
+    
+  .head-title{
+    height: 39px;
+    position: relative;
+    top: 19px;
+  }
 
     a{
       color: white;
@@ -197,12 +203,15 @@
              width: 30%;
              height: 500px;
              display: inline-block;
-             
+          h1{
+            position: relative;
+            top:30px;
+          }   
    
          .form{
             height: 360px;
             position: relative;
-            top:30px;
+            top:70px;
    
             .alert{
                 position: absolute;
