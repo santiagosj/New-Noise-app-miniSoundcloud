@@ -18,13 +18,13 @@
             <p>
               <label>Nombre</label><br/>
               <input type="text" #name="ngModel" name="name" [(ngModel)]="artist.name" required class="form-input">
-              <span *ngIf="!name.valid && name.touched">El nombre es obligatorio</span>
+              <span *ngIf="!name.valid && name.touched" class="alert">Campo obligatorio</span>
             </p>
           
             <p>
               <label>Genero</label><br/>
               <input type="text" #description="ngModel" name="description" [(ngModel)]="artist.description" required class="form-input"/>
-              <span *ngIf="!description.valid && description.touched">Describe tu proyecto</span>
+              <span *ngIf="!description.valid && description.touched" class="alert">Campo obligatorio</span>
             </p>
             
                     

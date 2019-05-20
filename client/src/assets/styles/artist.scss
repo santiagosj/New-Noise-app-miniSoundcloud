@@ -3,17 +3,44 @@
 .section-1,.artist-detail{
     position: relative;
     color: white;
+    .head-page{
+        h1{
+            font-size: 9vw;
+            background: #00000026;
+            transition: background 2s;
+        }
+        h1:hover{
+            background: #00000063;
+        }
+    }
+    .row{
+        font-size: 60px;
+    }
     a{
         color: white;
         text-decoration: none;
+        cursor: pointer;
     }
-    ul{
+     ul{
         list-style-type: none;
+        text-align: center;
         li{
-
-        }
+            display: inline-block;
+            margin-right: 10%;
+      }
     }
-}
+
+     .artist-list{
+         .artist-item{
+            background-color: #00000063;
+            height: 272px;
+            .artist-name{
+                height: 67px;
+            }
+         }
+     }
+ }
+
 
 
 

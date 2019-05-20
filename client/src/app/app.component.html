@@ -102,6 +102,10 @@
       
                <label> Contraseña </label><br>
                <input type="password" #password="ngModel" name="password" [(ngModel)]="user.password" class="loginInput" required>
+               <!--TODO WARNING PASSWORD-->
+               <span *ngIf="" class="alert">
+                   La contraseña es incorrecta
+               </span>
              
              <br>
              <button type="submit" class="btn btnRaise" value="Iniciar sesion">Iniciar Sesión</button>

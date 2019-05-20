@@ -22,11 +22,10 @@
       }
        
      .form{
-        position: relative;
-       
+        position: relative;    
         width: 37%;
         background-color: #00000080;
-        top:30px;
+        top:30px; 
 
         label{
           color: white;
@@ -42,9 +41,10 @@
         }
         .alert{
             position: absolute;
-            right: 130px;
+            right: 39%;
             color: #ff7c7c;
             }   
+            
         input{
             width: 70%;
             height: 43px;

@@ -9,8 +9,8 @@
   <a [routerLink]="['/crear-artista']" *ngIf="identity.role == 'ROLE_ADMIN'" class="btn btn-default">Añadir Artista</a>
 
   <ul class="pagination pull-right">
-    <li><a [routerLink]="['/artistas',prev_page]">&laquo;</a></li>
-    <li><a [routerLink]="['/artistas',next_page]">&raquo;</a></li>
+    <li><a [routerLink]="['/artistas',prev_page]" class="row" >&laquo;</a></li>
+    <li><a [routerLink]="['/artistas',next_page]" class="row">&raquo;</a></li>
   </ul>
 
 </div>
@@ -19,7 +19,7 @@
 
 <ul class="artist-list" *ngIf="identity">
 
-  <li *ngFor="let artist of artists" class="col-lg-3 artist-item">
+  <li *ngFor="let artist of artists" class="artist-item">
 
     <div class="artist-image">
       <img src="{{url + 'get-image-artist/' + artist.image}}">
@@ -39,7 +39,7 @@
        <!-- confirmacion de borrado de artista -->
 
       <div class="seguro" *ngIf="confirmado == artist._id">
-           <h4>¿Estas seguro de querer eliminar este Artista?</h4>
+           <h4 class="alert">¿Estas seguro de querer eliminar este Artista?</h4>
            <a (click)="onDeleteArtist(artist._id)" class="buttons">Eliminar</a>
            <a (click)="onCancelArtist(artist._id)" class="buttons">Cancelar</a>
       </div>

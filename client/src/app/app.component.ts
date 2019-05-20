@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
     }else{
       //crear elemento en el localstorage para mantener al usuario logueado
         localStorage.setItem('identity', JSON.stringify(identity));
-      //conseguir el token para enviarselo a cada peticion http
+      //conseguir el token para enviarlo a cada peticion http
       this._userService.singUp(this.user, 'true').subscribe(
       response =>{
       let token = response.token;
@@ -111,7 +111,7 @@ export class AppComponent implements OnInit {
 
   onSubmitRegister(){
     console.log(this.user_register);
-
+     
     this._userService.register(this.user_register).subscribe(
       response => {
       let user = response.user;
