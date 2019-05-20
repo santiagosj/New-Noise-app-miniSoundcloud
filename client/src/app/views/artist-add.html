@@ -1,6 +1,6 @@
 <!--FORMULARIO PARA AÑADIR ARTISTA -->
-<div class="col-lg-6 artistForm" *ngIf="identity && identity.role=='ROLE_ADMIN'"><!--SI EL USUARIO ES ADMIN-->
-  <h1>{{titulo}}</h1>
+<div class="formContainer" *ngIf="identity && identity.role=='ROLE_ADMIN'"><!--SI EL USUARIO ES ADMIN-->
+  
 
   <div *ngIf="alertMessage">
     <div class="alert alert-info">
@@ -10,38 +10,65 @@
 
   <!--FORMULARIO-->
 
-  <form #formArtist="ngForm" (ngSubmit)="onSubmit()" >
-  <p>
-    <label>Nombre</label>
-    <input type="text" #name="ngModel" name="name" [(ngModel)]="artist.name" required class="form-control">
-    <span *ngIf="!name.valid && name.touched">El nombre es obligatorio</span>
-  </p>
+  <form class="form artist-form" #formArtist="ngForm" (ngSubmit)="onSubmit()" >
 
-  <p>
-    <label>Descripcion</label>
-    <textarea type="text" #description="ngModel" name="description" [(ngModel)]="artist.description" required class="form-control"></textarea>
-    <span *ngIf="!description.valid && description.touched">Describe tu proyecto</span>
-  </p>
+      <h1>{{titulo}}</h1>
+      
+      <div class="inputHolder">
+            <p>
+              <label>Nombre</label><br/>
+              <input type="text" #name="ngModel" name="name" [(ngModel)]="artist.name" required class="form-input">
+              <span *ngIf="!name.valid && name.touched">El nombre es obligatorio</span>
+            </p>
+          
+            <p>
+              <label>Genero</label><br/>
+              <input type="text" #description="ngModel" name="description" [(ngModel)]="artist.description" required class="form-input"/>
+              <span *ngIf="!description.valid && description.touched">Describe tu proyecto</span>
+            </p>
+            
+                 <!--SI HAY QUE EDITAR EL ARTISTA -->
 
-       <div *ngIf="is_edit">
+                 <div *ngIf="is_edit">
+          
+                   <div class="artist_image_for_edit" *ngIf="artist.image && artist.image != 'null'">
+                       <img src="{{url + 'get-image-artist/' + artist.image}}"/>
+                  </div>
+          
+                  <p>
+                       <label>Imagen </label><br/>
+                       <button class="btnRaise"type="file"placeholder="Sube tu imagen" (change)="fileChangeEvent($event)" >Subir</button><br/>
+                       
+                       <button type="submit" value="{{titulo}}" [disabled]="!formArtist.form.valid" class="btnRaise">Actualizar</button>
 
-         <div class="artist_image_for_edit" *ngIf="artist.image && artist.image != 'null'">
-             <img src="{{url + 'get-image-artist/' + artist.image}}"/>
-        </div>
+                  </p>
+          
+               </div>
+               <!--FIN EDITAR-->
 
-        <p>
-             <label>Cambia la imagen desde aquí</label>
-             <input type="file"placeholder="Sube tu imagen" (change)="fileChangeEvent($event)" >
-        </p>
+               <div *ngIf="!is_edit">
+          
+                   <div class="artist_image_for_edit" *ngIf="artist.image && artist.image != 'null'">
+                       <img src="{{url + 'get-image-artist/' + artist.image}}"/>
+                   </div>
+          
+                  <p>
+                       <label>Imagen </label><br/>
+                       <button class="btnRaise"type="file"placeholder="Sube tu imagen" (change)="fileChangeEvent($event)" >Subir</button><br/>
+                       
+                       <button type="submit" value="{{titulo}}" [disabled]="!formArtist.form.valid" class="btnRaise">Agregar</button>
 
-     </div>
-
-     <input type="submit" value="{{titulo}}" [disabled]="!formArtist.form.valid" class="btnAdd"/>
+                  </p>
+          
+               </div>
+      
+       </div>
+  
   </form>
 
 </div>
 
-<div class="col-lg-6" *ngIf="!identity || identity.role != 'ROLE_ADMIN'">
+<div class="" *ngIf="!identity || identity.role != 'ROLE_ADMIN'">
    <h1>Error</h1>
    <p>Espacio solo permitido para administrador</p>
 </div>

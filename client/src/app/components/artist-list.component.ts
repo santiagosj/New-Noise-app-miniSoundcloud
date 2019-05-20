@@ -8,7 +8,7 @@ import { Artist } from '../models/artist';
 @Component({
   selector: 'artist-list',
   templateUrl: '../views/artist-list.html',
-  styleUrls:['../app.component.scss'],
+  styleUrls:['../app.component.scss','../../assets/styles/artist.scss'],
 	providers: [UserService,ArtistService]
 })
 

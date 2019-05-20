@@ -11,7 +11,7 @@ import { Album } from '../models/album';
 @Component({
   selector: 'artist-detail',
   templateUrl: '../views/artist-detail.html',
-  styleUrls:['../app.component.scss'],
+  styleUrls:['../app.component.scss','../../assets/styles/artist.scss'],
 	providers: [UserService, ArtistService, AlbumService]
 })
 

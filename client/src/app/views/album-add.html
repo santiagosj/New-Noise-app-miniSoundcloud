@@ -1,5 +1,5 @@
 <!--SI EL USUARIO ES ADMIN APARECE EL FORMULARIO PARA AGREGAR ALBUM-->
-<div class=" albumForm" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
+<div class=" formContainer" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
 
 	<h1>{{titulo}}</h1>
 
@@ -7,47 +7,54 @@
 		<div class="alert alert-info">
 		  {{alertMessage}}
 		</div>
-	</div>
+</div>
 
    <!--FORMULARIO PARA AGREGAR ALBUM-->
-	<form #formAlbum="ngForm" (ngSubmit)="onSubmit()">
-    <!--QUE ONDA CON LA ETIQUETA P?-->
-		<p>
-			<label>Titulo</label>
-			<input type="text" #title="ngModel" name="title" [(ngModel)]="album.title" required class="form-control"/>
-			<span *ngIf="!title.valid && title.touched">
-				El titulo es obligatorio
-			</span>
-		</p>
-
-		<p>
-			<label>Descripción</label>
-			<textarea #description="ngModel" name="description" [(ngModel)]="album.description" required class="form-control"></textarea>
-			<span *ngIf="!description.valid && description.touched">
-				La descripción es obligatoria
-			</span>
-		</p>
-
-		<p>
-			<label>Año</label>
-			<input type="text" #year="ngModel" name="year" [(ngModel)]="album.year" required class="form-control"/>
-			<span *ngIf="!year.valid && year.touched">
-				El año es obligatorio
-			</span>
-		</p>
-
-		<div *ngIf="is_edit">
-			<div class="album_image_for_edit" *ngIf="album.image && album.image != 'null'">
-				<img src="{{url + 'get-image-album/' + album.image }}" />
-			</div>
+	<form class="form form-album" #formAlbum="ngForm" (ngSubmit)="onSubmit()">
+		
+		 <div class="inputHolder">
 
 			<p>
-				<label> Sube la imagen del album</label>
-				<input type="file" placeholder="Subir imagen..." (change)="fileChangeEvent($event)" />
+				<label>Titulo</label>
+				<input type="text" #title="ngModel" name="title" [(ngModel)]="album.title" required class="input-form"/>
+				<span *ngIf="!title.valid && title.touched">
+					El titulo es obligatorio
+				</span>
 			</p>
-		</div>
+	
+			<p>
+				<label>Descripción</label>
+				<textarea #description="ngModel" name="description" [(ngModel)]="album.description" required class="input-form"></textarea>
+				<span *ngIf="!description.valid && description.touched">
+					La descripción es obligatoria
+				</span>
+			</p>
+	
+			<p>
+				<label>Año</label>
+				<input type="text" #year="ngModel" name="year" [(ngModel)]="album.year" required class="input-form"/>
+				<span *ngIf="!year.valid && year.touched">
+					El año es obligatorio
+				</span>
+			</p>
+	
+			<div *ngIf="is_edit">
+				<div class="album_image_for_edit" *ngIf="album.image && album.image != 'null'">
+					<img src="{{url + 'get-image-album/' + album.image }}" />
+				</div>
+	
+				<p>
+					<label>Subir</label>
+					<input type="file" placeholder="Subir imagen..." (change)="fileChangeEvent($event)" />
+				</p>
+			</div>
+	   
+					<button type="submit" value="{{titulo}}" [disabled]="!formAlbum.form.valid" class="btnRaise">Agregar Album</button>
 
-		<input type="submit" value="{{titulo}}" [disabled]="!formAlbum.form.valid" class="btnAdds"/>
+			</div>
+	
+	  </form>
 
-	</form>
-</div>
+	</div>
+		
+
