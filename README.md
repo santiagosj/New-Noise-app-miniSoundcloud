@@ -1,7 +1,7 @@
 # Proyecto Arquitectura MEAN (MongoDB, Express, Angular, Node).
 Gestor de contenido audiovisual. Similar a Spotify o soundcloud.
 
-![Image](https://media.giphy.com/media/9OEUu4UktZF84/giphy.gif)
+![Image](https://i.gifer.com/embedded/download/6bL.gif)
 
 ## Cosas por hacer 
 
