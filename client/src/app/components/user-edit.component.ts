@@ -44,11 +44,11 @@ export class UserEditComponent implements OnInit{
 			}else{
 				// this.user = response.user
 	      localStorage.setItem('identity', JSON.stringify(this.user));
-				document.getElementById("identity_name").innerHTML = this.user.name;
-
+				
            if(!this.filesToUpload){
 						 //redirecion
 					 }else{
+
 					   this.makeFileRequest(this.url+'upload-image-user/'+ this.user._id, [], this.filesToUpload).then(
 						 (result: any) => {
 

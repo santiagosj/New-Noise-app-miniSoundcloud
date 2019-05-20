@@ -9,7 +9,7 @@ import { Artist } from '../models/artist';
 
 @Component({
   selector: 'artist-edit',
-  templateUrl: '../views/artist-add.html',
+  templateUrl: '../views/artist-edit.html',
   styleUrls:['../../assets/styles/form.scss','../../assets/styles/buttons.scss','../app.component.scss'],
 	providers: [UserService, ArtistService, UploadService]
 })
@@ -40,7 +40,7 @@ export class ArtistEditComponent implements OnInit{
     this.is_edit = true;
   }
   ngOnInit(){
-    console.log('Artists-add.component cargado');
+    console.log('Artists-edit.component cargado');
     //llamar al metodo del api para sacar una artista en base a su id getArtist()
 
       this.getArtist();
@@ -80,12 +80,19 @@ export class ArtistEditComponent implements OnInit{
 
     this._artistService.editArtist(this.token, id, this.artist).subscribe(
       response => {
+
         if(!response.artist){
+          
           this.alertMessage = 'Error en el servidor!';
+
         }else{
+
           this.alertMessage = 'El artista ha sido editado correctamente';
+
           if(!this.filesToUpload){
+
             this._router.navigate(['/artista', response.artist._id]);
+
           }else{
 
           //subir la imagen
@@ -114,10 +121,11 @@ export class ArtistEditComponent implements OnInit{
      );
    });
  }
+
  //toma el dato que pasa el usuario por el formulario
  public filesToUpload: Array<File>;
- fileChangeEvent(fileInput: any){
-   this.filesToUpload = <Array<File>>fileInput.target.files;
- }
-
+    fileChangeEvent(fileInput: any){
+        this.filesToUpload = <Array<File>>fileInput.target.files;
+    }
+ 
 }

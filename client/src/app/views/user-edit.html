@@ -12,7 +12,7 @@
     </div>
     
     <!--FORMULARIO -->
-    <form class="form" #userUpdateForm ="ngForm" (ngSubmit)="onSubmit()">
+    <form class="form user-form" #userUpdateForm ="ngForm" (ngSubmit)="onSubmit()">
         <h1>{{titulo}}</h1>
         <div class="inputHolder">
             <p>
@@ -50,7 +50,7 @@
               
                    <label>Imagen</label>
                    <p>
-                    <button class="btnRaise" type="file"  (change)="fileChangeEvent($event)" >Seleccionar Imagen</button>
+                    <input class="btnRaise" type="file"  (change)="fileChangeEvent($event)"  value="Subir"/><br/>
                  
                     <button type="submit" class="btnRaise" value="Actualizar">Actualizar</button>
                    </p>

@@ -1,0 +1,58 @@
+<!--FORMULARIO PARA AÑADIR ARTISTA -->
+<div class="formContainer" *ngIf="identity && identity.role=='ROLE_ADMIN'"><!--SI EL USUARIO ES ADMIN-->
+  
+
+    <div *ngIf="alertMessage">
+      <div class="alert alert-info">
+        {{alertMessage}}
+      </div>
+    </div>
+  
+    <!--FORMULARIO-->
+  
+    <form class="form artist-edit" #formArtist="ngForm" (ngSubmit)="onSubmit()" >
+  
+        <h1>{{titulo}}</h1>
+        
+        <div class="inputHolder">
+              <p>
+                <label>Nombre</label><br/>
+                <input type="text" #name="ngModel" name="name" [(ngModel)]="artist.name" required class="form-input">
+                <span *ngIf="!name.valid && name.touched">El nombre es obligatorio</span>
+              </p>
+            
+              <p>
+                <label>Genero</label><br/>
+                <input type="text" #description="ngModel" name="description" [(ngModel)]="artist.description" required class="form-input"/>
+                <span *ngIf="!description.valid && description.touched">Describe tu proyecto</span>
+              </p>
+              
+                   <!--SI HAY QUE EDITAR EL ARTISTA -->
+  
+                   <div *ngIf="is_edit">
+            
+                     <div class="artist_image_for_edit" *ngIf="artist.image && artist.image != 'null'">
+                         <img src="{{url + 'get-image-artist/' + artist.image}}"/>
+                    </div>
+            
+                    <p>
+                         <label>Imagen </label><br/>
+                         <input class="btnRaise"type="file" (change)="fileChangeEvent($event)" /><br/>
+  
+                    </p>
+            
+                 </div>          
+                      
+                         <button type="submit" value="{{titulo}}" [disabled]="!formArtist.form.valid" class="btnRaise">Actualizar</button>
+               
+         </div>
+    
+    </form>
+  
+  </div>
+  
+  <div class="" *ngIf="!identity || identity.role != 'ROLE_ADMIN'">
+     <h1>Error</h1>
+     <p>Espacio solo permitido para administrador</p>
+  </div>
+  

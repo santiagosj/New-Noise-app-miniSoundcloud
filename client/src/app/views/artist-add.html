@@ -10,7 +10,7 @@
 
   <!--FORMULARIO-->
 
-  <form class="form artist-form" #formArtist="ngForm" (ngSubmit)="onSubmit()" >
+  <form class="form artist-add" #formArtist="ngForm" (ngSubmit)="onSubmit()" >
 
       <h1>{{titulo}}</h1>
       
@@ -27,41 +27,9 @@
               <span *ngIf="!description.valid && description.touched">Describe tu proyecto</span>
             </p>
             
-                 <!--SI HAY QUE EDITAR EL ARTISTA -->
-
-                 <div *ngIf="is_edit">
-          
-                   <div class="artist_image_for_edit" *ngIf="artist.image && artist.image != 'null'">
-                       <img src="{{url + 'get-image-artist/' + artist.image}}"/>
-                  </div>
-          
-                  <p>
-                       <label>Imagen </label><br/>
-                       <button class="btnRaise"type="file"placeholder="Sube tu imagen" (change)="fileChangeEvent($event)" >Subir</button><br/>
-                       
-                       <button type="submit" value="{{titulo}}" [disabled]="!formArtist.form.valid" class="btnRaise">Actualizar</button>
-
-                  </p>
-          
-               </div>
-               <!--FIN EDITAR-->
-
-               <div *ngIf="!is_edit">
-          
-                   <div class="artist_image_for_edit" *ngIf="artist.image && artist.image != 'null'">
-                       <img src="{{url + 'get-image-artist/' + artist.image}}"/>
-                   </div>
-          
-                  <p>
-                       <label>Imagen </label><br/>
-                       <button class="btnRaise"type="file"placeholder="Sube tu imagen" (change)="fileChangeEvent($event)" >Subir</button><br/>
-                       
-                       <button type="submit" value="{{titulo}}" [disabled]="!formArtist.form.valid" class="btnRaise">Agregar</button>
-
-                  </p>
-          
-               </div>
-      
+                    
+                <button type="submit" value="{{titulo}}" [disabled]="!formArtist.form.valid" class="btnRaise">Agregar</button>
+             
        </div>
   
   </form>

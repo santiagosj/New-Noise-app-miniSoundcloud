@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
-import {  HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators'
-import { Observable } from 'rxjs';
+import {  HttpClient } from '@angular/common/http';
+
+
 import { GLOBAL } from './global';
-import { Artist } from '../models/artist';
+
 @Injectable()
 export class UploadService {
   public url:string;
-
+ 
 
   constructor(private _http: HttpClient){
     this.url = GLOBAL.url;
   }
+  
 
   makeFileRequest(url: string, params: Array<string>, files: Array<File>, token: string, name: string){
 

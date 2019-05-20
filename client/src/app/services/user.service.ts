@@ -15,7 +15,8 @@ export class UserService {
     this.url = GLOBAL.url;
   }
 
-  singUp(user_to_login, gethash = null):Observable<any>{
+  singUp(user_to_login:any, gethash = null):Observable<any>{
+
     if(gethash != null){
 			user_to_login.gethash = gethash;
 		}

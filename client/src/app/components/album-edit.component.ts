@@ -10,7 +10,7 @@ import { Album } from '../models/album';
 
 @Component({
   selector: 'album-edit',
-  templateUrl: '../views/album-add.html',
+  templateUrl: '../views/album-edit.html',
   styleUrls:['../../assets/styles/form.scss','../../assets/styles/buttons.scss','../app.component.scss'],
 	providers: [UserService, AlbumService, UploadService]
 })
