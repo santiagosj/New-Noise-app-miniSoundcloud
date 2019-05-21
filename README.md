@@ -9,6 +9,13 @@ Gestor de contenido audiovisual. Similar a Spotify o soundcloud.
 * Player
 * Iconos
 * Cards
-* Alertas      
+  - Album description.
+  - Album artist
+* Alertas
+  - Confirmacion para eliminar...
+* Search     
 
 ### Funciones... 
+* Search en base de datos
+* Likes
+* Shares
