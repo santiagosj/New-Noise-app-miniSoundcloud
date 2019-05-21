@@ -7,7 +7,6 @@ Gestor de contenido audiovisual. Similar a Spotify o soundcloud.
 ## Cosas por hacer 
 ### Interface
 * Player
-* Albums view {text-decoration:line-through}
 * Iconos
 * Cards
 * Alertas      
