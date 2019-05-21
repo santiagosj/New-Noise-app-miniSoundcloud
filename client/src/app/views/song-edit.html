@@ -1,0 +1,62 @@
+<!--FORMULARIO PARA AGREGAR CANCION SI EL USUARIO ES ADMIN-->
+<div class="formContainer"*ngIf="identity && identity.role=='ROLE_ADMIN'">
+    
+  
+    <div *ngIf="alertMessage">
+          <div class="alert alert-info">
+            {{alertMessage}}
+          </div>
+      </div>
+  
+    <form class="form song-edit" #formSong="ngForm" (ngSubmit)="onSubmit()">
+               <h1>{{titulo}}</h1>
+ 
+                 <div class="inputHolder">
+
+                          <p>
+                            <label>Número</label><br/>
+                            <input type="text" #number="ngModel" name="number" [(ngModel)]="song.number" required  class="form-input">
+                            <span class="alert" *ngIf="!number.valid && number.touched">
+                              El número de canción es obligatorio
+                            </span>
+                          </p>
+                      
+                          <p>
+                            <label>Titulo</label><br/>
+                            <input type="text" #name="ngModel" name="name" [(ngModel)]="song.name" required class="form-input">
+                            <span class="alert" *ngIf="!name.valid && name.touched">
+                              El titulo es obligatorio
+                            </span>
+                          </p>
+                      
+                          <p>
+                            <label>Duración</label><br/>
+                            <input type="text" #duration="ngModel" name="duration" [(ngModel)]="song.duration" required class="form-input"/>
+                            <span class="alert" *ngIf="!duration.valid && duration.touched">Indica la duración de tu canción
+                            </span>
+                          </p>
+                      
+                        
+                          <div class="song_file_for_edit"
+                          *ngIf="song.file && song.file != 'null'">
+                            <audio controls="controls">
+                                 <source src="{{url + 'get-song-file/' + song.file}}" type="audio/mpeg"/>
+                                 El navegador no soporta la reproducción de audio
+                            </audio>
+                          </div>
+                      
+                          <p>
+                            <label>Sube la canción desde aquí</label>
+                            <input type="file"placeholder="Sube tu canción" (change)="fileChangeEvent($event)" >
+                          </p>
+
+                          <button type="submit" value="{{titulo}}" [disabled]="!formSong.form.valid" class="btnRaise ">Editar Canción</button>
+
+            </div>
+            
+                
+    
+        </form>
+ 
+    </div>
+  

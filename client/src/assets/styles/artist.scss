@@ -24,6 +24,7 @@
      ul{
         list-style-type: none;
         text-align: center;
+        
         li{
             display: inline-block;
             margin-right: 10%;
@@ -31,9 +32,13 @@
     }
 
      .artist-list{
+        height: 388px;
+        background-color: #a9a9a926;
          .artist-item{
             background-color: #00000063;
             height: 272px;
+            position: relative;
+            top: 15%;
             .artist-name{
                 height: 67px;
             }

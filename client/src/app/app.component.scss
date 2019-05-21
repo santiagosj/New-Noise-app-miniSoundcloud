@@ -89,19 +89,26 @@
       
       .home-div{ 
         position: relative;
+         h1{
+          background: #00000026;
+          transition: background 2s;
+         }
 
           h1,h2,h3{
             position: inherit;
             z-index: 1;
             font-size: 9vw;
             color: white;
-
-            a{
-              text-decoration: none;
-              color: aliceblue;
-             }
-
+           
           }
+          h1:hover{
+             background: #00000063;
+          }
+          
+          a{
+            text-decoration: none;
+            color: aliceblue;
+           }
 
        }
 
