@@ -4,6 +4,7 @@
     a{
         color: white;
         text-decoration: none;
+        cursor: pointer;
     }
     ul{
         background-color: #0000003d;
@@ -17,4 +18,73 @@
           }
         }
     }
+
+
+  #album-head-card{
+    padding: 20px;
+    height: 340px;
+    
+    .infoHolder{
+      display:inline-block;
+      position: absolute;
+      width: 45%;
+      height: 300px;
+      left: 116px;
+      top: 70px;
+       button{
+         position: relative;
+         right: 183px;
+         top: 50px;
+      }
+      .image,.data{
+        display:inline-block;
+      }
+      .image img{
+         width: 260px;
+      }
+      .data{
+        position: absolute;
+        margin-left: 70px;
+      }
+
+    }
+    
+  }
+
+  
+
+
+
+
+  #gallery-songs{
+     #songs-list{
+       .song-item{
+         height: 150px;
+         border-top: 1px solid white;
+         //border-bottom: 1px solid white;
+         width: 95%;
+         .title{
+          position: relative;
+          top: 50px;
+          .btnPlay{
+            position:relative;
+            bottom:12px;
+          }
+           .editDelete{
+                position: relative;
+                display: inline-block;
+                left: 100px;
+                bottom: 16px;
+           }
+           .seguro-song{
+            position: relative;
+            display: inline-block;
+            left: 150px;
+            bottom: 16px;
+           }
+         }
+       }
+     }
+  }
 }
+

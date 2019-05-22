@@ -7,11 +7,30 @@ button, .inputBtn{
     line-height: 1;
     margin: 0.5em;
     padding: 1em 2em;
-    color:white
+    color:white;
+    cursor :pointer;
 }
 
 .btnRaise:hover,
 .btnRaise:focus {
   box-shadow: 0 0.5em 0.5em -0.4em white;
+  transform: translateY(-0.25em);
+}
+
+.btnEliminar:hover,
+.btnEliminar:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em #ff7c7c;
+  transform: translateY(-0.25em);
+}
+
+.btnPlay:hover,
+.btnPlay:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em #99ffcb;
+  transform: translateY(-0.25em);
+}
+
+.btnWarning:hover,
+.btnWarning:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em #fdff8c;
   transform: translateY(-0.25em);
 }
