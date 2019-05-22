@@ -12,9 +12,17 @@
 
  .audio-file{
 
-     p,#play-song-title{
+     p, #play-song-title{
          color: white;
          font-size: 30px;
+     }
+
+     audio {
+         background-color: #f1f3f4;
+         width: 100%;
+         position: relative;
+         top:10px;
+         
      }
      
  }

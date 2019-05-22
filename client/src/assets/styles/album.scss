@@ -6,9 +6,15 @@
         text-decoration: none;
     }
     ul{
+        background-color: #0000003d;
         list-style-type: none;
         li{
-          
+          p{
+            display: inline-block;
+            position: relative;
+            bottom: 16px;
+            left: 50px;
+          }
         }
     }
 }

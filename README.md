@@ -6,17 +6,23 @@ Gestor de contenido audiovisual. Similar a Spotify o soundcloud.
 
 ## Cosas por hacer 
 ### Interface
-* Player
+* Custom Player
+  - Custom Controls
   - Player list
-* Iconos
+* Iconos SVGs
+  - Menu
+  - Cards 
 * Cards
   - Album description.
   - Album artist
 * Alertas
   - Confirmacion para eliminar...
 * Search     
+* Buttons [Warnings,Cancel,Confirm,...etc]
+
 
 ### Funciones... 
-* Search en base de datos
+* Search [Artistas,Albums,Canciones,...etc]
 * Likes
 * Shares
+* Reproductor automatico de playlist

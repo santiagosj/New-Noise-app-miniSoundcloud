@@ -21,7 +21,7 @@
 		</div>
 	</div>
 	
-	<!--LISTA DE CANCIONES DEL ALBUM O LISTA DE REPRODUCCION-->
+	<!--TRACK LIST DEL ALBUM O LISTA DE REPRODUCCION-->
 
 	<div class="clearfix"></div>
 
@@ -33,27 +33,28 @@
 
 				<div class="title">
                     <!--CONFIGURAR PLAYLIST	-->
-					<a class="btnPlay" (click)="startPlayer(song)">
-						<span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+					<a class="btnRaise" (click)="startPlayer(song)">
+						<span class="" aria-hidden="true"></span>
+						<svg-icon src="../../assets/images/play-button.svg" [svgStyle]="{ 'width.px':50,'fill':'rgb(253,253,253)','cursor':'pointer'}"></svg-icon>
 					</a>
 
 				    <p>{{song.number + '. '+ song.name + ' - '+ song.duration}}</p>	<!--INFO CANCION-->
                      <!--SI EL USUARIO ES ADMIN MUESTRA LOS BOTONES PARA BORRAR O EDITAR CANCION-->
 					<div class="buttons" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
-						<a [routerLink]="['/editar-tema', song._id]" class="btnEdit">
+						<a [routerLink]="['/editar-tema', song._id]" class="btnRaise">
 							Editar
 						</a>
                           ||
-						<a (click)="onDeleteConfirm(song._id)" class="btnEliminar">
+						<a (click)="onDeleteConfirm(song._id)" class="btnRaise">
 							Borrar
 						</a>
 					</div>
                     <!--CONFIRMACION DE ELIMINADO DE CANCION-->
 					<div class="seguro seguro-song" *ngIf="confirmado == song._id">
-						<a (click)="onDeleteSong(song._id)" class="btnEliminar">
+						<a (click)="onDeleteSong(song._id)" class="btnRaise">
 							Eliminar
 						</a>
-						<a (click)="onCancelSong()" class="btnCancelar">
+						<a (click)="onCancelSong()" class="btnRaise">
 							Cancelar
 						</a>
 					</div>
