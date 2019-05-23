@@ -36,10 +36,10 @@
 
 				<div class="title">
                     <!--CONFIGURAR PLAYLIST	-->
-					<button class="btnPlay" (click)="startPlayer(song)">
+					<a class="" (click)="startPlayer(song)">
 						<span class="" aria-hidden="true"></span>
 						<svg-icon src="../../assets/images/play.svg" [svgStyle]="{ 'width.px':50,'fill':'rgb(253,253,253)','cursor':'pointer'}"></svg-icon>
-					</button>
+					</a>
 
 				    <p>{{song.number + '. '+ song.name + ' - '+ song.duration}}</p>	<!--INFO CANCION-->
                      <!--SI EL USUARIO ES ADMIN MUESTRA LOS BOTONES PARA BORRAR O EDITAR CANCION-->

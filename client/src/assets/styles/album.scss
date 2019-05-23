@@ -13,7 +13,7 @@
           p{
             display: inline-block;
             position: relative;
-            bottom: 16px;
+            bottom: 8px;
             left: 50px;
           }
         }
@@ -54,8 +54,6 @@
   
 
 
-
-
   #gallery-songs{
      #songs-list{
        .song-item{
@@ -66,21 +64,18 @@
          .title{
           position: relative;
           top: 50px;
-          .btnPlay{
-            position:relative;
-            bottom:12px;
-          }
+          
            .editDelete{
                 position: relative;
                 display: inline-block;
                 left: 100px;
-                bottom: 16px;
+                bottom: 8px;
            }
            .seguro-song{
             position: relative;
             display: inline-block;
             left: 150px;
-            bottom: 16px;
+            bottom: 8px;
            }
          }
        }

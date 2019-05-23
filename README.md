@@ -26,7 +26,8 @@ Gestor de contenido audiovisual. Similar a Spotify o soundcloud.
 * Tracklist:
   - Imagen de la cancion.
   - Waveform.
-* Buttons [Warnings,Cancel,Confirm,...etc]
+* Buttons [Warnings,Cancel,Confirm,...etc].
+* Configurar nombres de rutas [nombre-ruta = nombre-vistas].
 
 ### Test:
 * Formularios:

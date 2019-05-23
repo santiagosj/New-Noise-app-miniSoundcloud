@@ -5,24 +5,29 @@ import {GLOBAL} from '../services/global';
 @Component({
 	selector: 'player',
 	template: `
-	<div class="album-image">
-		<span *ngIf="song.album">
-			<img id="play-image-album" src="{{ url + 'get-image-album/' + song.album.image}}" />
-		</span>
-
-		<span *ngIf="!song.album">
-			<img id="play-image-album" src="assets/images/cassette-tape.jpg" />
-		</span>
-	</div>
+	
 
 	<div class="audio-file">
 
 		<div class="creditsContainer">
-		   <p>Playing :   </p>
+
+			 <div class="album-image">
+			 
+		      <span *ngIf="song.album">
+		        	<img id="play-image-album" src="{{ url + 'get-image-album/' + song.album.image}}" />
+		      </span>
+
+		      <span *ngIf="!song.album">
+		        	<img id="play-image-album" src="assets/images/cassette-tape.jpg" />
+			   	</span>
+				
+		   </div>
+		 
+		   <p>Playing : </p>
 		     <span id="play-song-title"> 
 			     {{song.name}}
 		     </span>
-		 
+		      ||
 		    <span id="play-song-artist">
 			    <span *ngIf="song.album.artist">
 				    {{song.album.artist.name}}

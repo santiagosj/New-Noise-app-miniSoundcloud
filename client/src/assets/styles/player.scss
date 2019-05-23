@@ -1,21 +1,33 @@
-.album-image{
 
-    span{
 
-       #play-image-album{
-          width: 50px;
-       }
-
-    } 
-   
- }//end album-image
 
  .audio-file{
+    .creditsContainer{
+        
+        .album-image{
+           display: inline-block;
+            span{
+        
+               #play-image-album{
+                  width: 50px;
+                  position: relative;
+            display: inline-block;
+            margin-right: 50px;
+            left: 25px;
+            top: 11px;
+               }
+        
+            } 
+           
+         }
 
-     p, #play-song-title{
-         color: white;
-         font-size: 30px;
-     }
+        p, #play-song-title, #play-song-artist{
+            display: inline-block;
+            color: white;
+            font-size: 30px;
+        }
+    }
+    
 
      audio {
          background-color: #f1f3f4;
@@ -26,3 +38,4 @@
      }
      
  }
+
