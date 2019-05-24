@@ -1,12 +1,11 @@
 <div *ngIf="artist" class="artist-box artist-detail">
-
- <div id="artist-head-card">
+ <div class="head-page">
+    <h1>{{artist.name}}</h1>
      <div class="image">
        <img src="{{url + 'get-image-artist/' + artist.image}}" *ngIf="artist.image && artist.image !== 'null'">
      </div>
 
      <div id="data">
-       <h1>{{artist.name}}</h1><br>
        <p class="description">{{artist.description}}</p>
        <a [routerLink]="['/crear-album',artist._id]" *ngIf="identity.role =='ROLE_ADMIN'" class="btnAdd">Añadir Album</a>
      </div>
@@ -16,7 +15,7 @@
 
  <div id="gallery-albums" *ngIf="albums">
    <!--LISTADO DE ALBUMS-->
-     <ul class="album-list">
+     <ul class="album-list ">
        <li *ngFor="let album of albums" class="album-item">
 
              <div class="album-image">
@@ -24,23 +23,20 @@
              </div>
 
              <div class="album-name">
-               <p>
-                 <a [routerLink]="['/album', album._id]">
-                   {{album.title}}
-                 </a>
-               </p>
                
+                 <a [routerLink]="['/album', album._id]">{{album.title}}</a>
+               
+              
                <div class="buttons" *ngIf="identity.role == 'ROLE_ADMIN'">
-                  <a [routerLink]="['/editar-album',album._id]" class="btnEdit">Editar</a>
-                  <a (click)="onDeleteConfirm(album._id)" class="btnEliminar">Eliminar</a>
+                  <a [routerLink]="['/editar-album',album._id]" class="">Editar</a>
+                  <a (click)="onDeleteConfirm(album._id)" class="">Eliminar</a>
                </div>
-
              </div>
 
              <div class="seguro-album" *ngIf="confirmado == album._id">
                  <h5>¿Estas seguro de querer eliminar este Album?</h5>
-                 <a (click)="onDeleteAlbum(album._id)" class="btnEliminar">Eliminar</a>
-                 <a (click)="onCancelAlbum(album._id)" class="btnCancelar">Cancelar</a>
+                 <a (click)="onDeleteAlbum(album._id)" class="">Eliminar</a>
+                 <a (click)="onCancelAlbum(album._id)" class="">Cancelar</a>
              </div>
        </li>
      </ul>

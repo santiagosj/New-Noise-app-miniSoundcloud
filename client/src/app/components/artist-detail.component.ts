@@ -16,6 +16,7 @@ import { Album } from '../models/album';
 })
 
 export class ArtistDetailComponent implements OnInit{
+  
   public artist: Artist;
   public albums: Album[];
   public identity;
@@ -35,6 +36,8 @@ export class ArtistDetailComponent implements OnInit{
     this.url = GLOBAL.url;
 
   }
+
+  //Acá llama a todos los metodos.
   ngOnInit(){
     console.log('Artists-detail.component cargado');
     //llamar al metodo del api para sacar una artista en base a su id getArtist()
