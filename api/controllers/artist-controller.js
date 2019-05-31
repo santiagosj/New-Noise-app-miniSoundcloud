@@ -120,9 +120,7 @@ function deleteArtist(req, res){
             });
           }}})}}})}
 
-
 //metodos para las imagenes
-
 
           function uploadImage(req, res){
             var artistId = req.params.id;

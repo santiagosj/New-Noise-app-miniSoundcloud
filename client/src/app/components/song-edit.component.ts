@@ -34,7 +34,7 @@ export class SongEditComponent implements OnInit{
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
     this.url = GLOBAL.url;
-    this.song = new Song(1,'', '', '', '');
+    this.song = new Song(1,'', '', '', '', '');//modelo
     this.is_edit = true;
   }
 
@@ -86,8 +86,9 @@ export class SongEditComponent implements OnInit{
             if(!this.filesToUpload){
               this._router.navigate(['/album', response.song.album]);
             }else{
-              //subir el archivo de audio
+              //subir el archivo de audio e imagen
               this._uploadService.makeFileRequest(this.url+'upload-file-song/'+id, [], this.filesToUpload,this.token,'file')
+              this._uploadService.makeFileRequest(this.url+'upload-image-song/'+id,[], this.filesToUpload,this.token,'image')
               .then(
                 (resul)=>{
                   this._router.navigate(['/album', response.song.album]);

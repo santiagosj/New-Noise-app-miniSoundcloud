@@ -61,7 +61,7 @@ export class PlayerComponent implements OnInit{
 		if(song){
 			this.song = song;
 		}else{
-			this.song = new Song(1, "","","","");
+			this.song = new Song(1, "","","","","");
 		}
 	}
 }

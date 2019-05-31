@@ -8,6 +8,7 @@ var SongSchema = Schema({
      name: String,
      duration: String,
      file: String,
+     image:String,
      album: { type: Schema.ObjectId, ref: 'Album' }
 });
 

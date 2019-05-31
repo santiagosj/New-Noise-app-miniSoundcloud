@@ -37,25 +37,29 @@
                           </p>
                       
                         
-                          <div class="song_file_for_edit"
-                          *ngIf="song.file && song.file != 'null'">
-                            <audio controls="controls">
+                          <div class="song_file_for_edit">
+                            <div  *ngIf="song.file && song.file != 'null'">
+                              <audio controls="controls">
                                  <source src="{{url + 'get-song-file/' + song.file}}" type="audio/mpeg"/>
-                                 El navegador no soporta la reproducción de audio
-                            </audio>
+                                  El navegador no soporta la reproducción de audio
+                               </audio>
+                            </div>
+                            <div *ngIf="song.image && song.image != 'null'">
+                              <img src="{{url + 'get-image-song/' + song.image}}"/>
+                            </div>
                           </div>
                       
                           <p>
-                            <label>Sube la canción desde aquí</label>
-                            <input type="file"placeholder="Sube tu canción" (change)="fileChangeEvent($event)" >
+                            <label>Subi la canción desde aquí</label>
+                            <input type="file"placeholder="Subi tu canción" (change)="fileChangeEvent($event)" ><br/>
+                            <label>Subi la imagen de la canción</label>
+                            <input type="file"placeholder="Subi la imagen de la cancion" (change)="fileChangeEvent($event)" >
                           </p>
 
-                          <button type="submit" value="{{titulo}}" [disabled]="!formSong.form.valid" class="btnRaise ">Editar Canción</button>
+                          <button type="submit" value="{{titulo}}" [disabled]="!formSong.form.valid" class="btnRaise">Editar Canción</button>
 
             </div>
             
-                
-    
         </form>
  
     </div>
