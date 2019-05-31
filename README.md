@@ -21,10 +21,10 @@ Gestor de audio Similar a Spotify o soundcloud.
   - Contraseña o Email incorrectos
 * Search.
 * Formularios:
-  - Agregar imagen a la canción.     
+  - Agregar imagen a la canción. ✔    
 * Lista de albums.
 * Tracklist:
-  - Imagen de la cancion.
+  - Imagen de la cancion.✔
   - Waveform.
 * Buttons [Warnings,Cancel,Confirm,...etc].
 * Configurar nombres de rutas [nombre-ruta = nombre-vistas].
