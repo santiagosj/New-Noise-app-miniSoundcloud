@@ -51,6 +51,30 @@ function saveAlbum(req, res){
 
 }
 
+function getAllAlbums(req, res){
+  if(req.params.page){
+    var page = req.params.page;
+  }else{
+    var page = 1;
+  }
+  var itemsPerPage = 4;
+
+  Album.find().sort('name').paginate(page,itemsPerPage, function(err,albums,total){
+    if(err){
+      res.status(500).send({message:"Error al cargar albums"});
+    }else{
+      if(!albums){
+        res.status(404).send({message:"No hay Albums"});
+      }else{
+        return res.status(200).send({
+          total_items:total,
+          albums:albums
+        })
+      }
+    }
+  });
+}
+
 function getAlbums(req, res){
   var artistId = req.params.artist;
 
@@ -163,6 +187,7 @@ module.exports = {
   getAlbum,
   saveAlbum,
   getAlbums,
+  getAllAlbums,
   updateAlbum,
   deleteAlbum,
   uploadImage,

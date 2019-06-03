@@ -42,13 +42,13 @@ getAlbums(token, artistId = null):Observable<any>{
 }
 
 //obtener todos los albums de todos los artistas
-getAllAlbums(token):Observable<any>{
+getAllAlbums(token, page):Observable<any>{
   let headers = new HttpHeaders({
     'Content-Type':'application/json',
     'Authorization':token
   })
    
-  return this._http.get(this.url+'album/', {headers:headers})
+  return this._http.get(this.url+'albums/' + page, {headers:headers})
 }
 
 addAlbum(token, album: Album):Observable<any>{

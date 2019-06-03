@@ -58,16 +58,23 @@ export class AlbumListComponent implements OnInit{
         }
       }
 
-      this._albumService.getAllAlbums(this.token).subscribe(
+      this._albumService.getAllAlbums(this.token,page).subscribe(
         response =>{
-          if(response.albums != 200){
+          if(!response.albums){
             console.log(response);
             this._router.navigate(['/']);
           }else{
             this.albums = response.albums;
           }
         },error=>{
-          console.log(<any>error)
+          var errorMessage = <any>error;
+
+            if(errorMessage != null){
+              var body = JSON.parse(error._body);
+              errorMessage = body.message;
+
+              console.log(error);
+            }
         })
      })
   }
