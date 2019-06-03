@@ -40,10 +40,10 @@ export class AlbumListComponent implements OnInit{
   ngOnInit(){
     console.log('Album-list.component cargado');
 
-    this.getAlbums();
+    this.getAllAlbums();
   }
 
-  getAlbums(){
+  getAllAlbums(){
     this._route.params.forEach((params:Params)=>{
       let id = null;
       let page = +params['page'];
@@ -58,7 +58,7 @@ export class AlbumListComponent implements OnInit{
         }
       }
 
-      this._albumService.getAlbums(this.token, id).subscribe(
+      this._albumService.getAllAlbums(this.token).subscribe(
         response =>{
           if(response.albums != 200){
             console.log(response);

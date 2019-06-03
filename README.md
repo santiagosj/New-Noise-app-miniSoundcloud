@@ -9,6 +9,9 @@ Gestor de audio Similar a Spotify o soundcloud.
 * Custom Player:
   - Custom Controls.
   - Player list.
+  - Fixed position.
+* Menu:
+  - Fixed Position.
 * Iconos SVGs:
   - Menu.
   - Cards.
@@ -26,8 +29,10 @@ Gestor de audio Similar a Spotify o soundcloud.
 * Tracklist:
   - Imagen de la cancion.✔
   - Waveform.
-* Buttons [Warnings,Cancel,Confirm,...etc].
+* Buttons [Warnings,Cancel,Confirm,...etc].✔ 
 * Configurar nombres de rutas [nombre-ruta = nombre-vistas].
+* Home:
+  - Random Playlist.
 
 ### Test:
 * Formularios:

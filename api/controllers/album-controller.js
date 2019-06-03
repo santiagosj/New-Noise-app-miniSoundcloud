@@ -51,7 +51,7 @@ function saveAlbum(req, res){
 
 }
 
-function getAlbums(req,res){
+function getAlbums(req, res){
   var artistId = req.params.artist;
 
   if (!artistId) {

@@ -37,7 +37,7 @@
  <div id="gallery-albums" *ngIf="albums">
    <!--LISTADO DE ALBUMS-->
      <ul class="album-list ">
-       <li *ngFor="let album of albums" class="album-item">
+       <li *ngFor="let album of albums" class="album-item" [routerLink]="['/album', album._id]">
 
              <div class="album-image">
                  <img src="{{url + 'get-image-album/' + album.image}}" alt="">
@@ -48,10 +48,10 @@
                  <a [routerLink]="['/album', album._id]">{{album.title}}</a>
                
               
-               <div class="buttons" *ngIf="identity.role == 'ROLE_ADMIN'">
-                  <a [routerLink]="['/editar-album',album._id]" class="">Editar</a>
-                  <a (click)="onDeleteConfirm(album._id)" class="">Eliminar</a>
-               </div>
+                 <div class="buttons" *ngIf="identity.role == 'ROLE_ADMIN'">
+                    <a [routerLink]="['/editar-album',album._id]" class="">Editar</a>
+                    <a (click)="onDeleteConfirm(album._id)" class="">Eliminar</a>
+                 </div>
 
              </div>
 

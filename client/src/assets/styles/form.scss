@@ -21,7 +21,7 @@
         height: 650px;
       }
       .song-edit{
-        height: 740px;
+        height: 959px;
       }
       .song-add{
         height: 477px;
@@ -32,7 +32,7 @@
         width: 37%;
         background-color: #00000080;
         top:30px; 
-        height: -webkit-fill-available;
+        
 
         label{
           color: white;
@@ -69,4 +69,8 @@
             }
           } 
         }
+      }
+
+      .songFormEditContainer{
+        height: 973px;
       }

@@ -17,7 +17,7 @@
 
   <ul class="album-list" *ngIf="identity">
 
-    <li *ngFor="let album of albums" class="artist-item">
+    <li *ngFor="let album of albums" class="artist-item" [routerLink]="['/album', album._id]" >
 
       <div class="artist-image">
         <img src="{{url + 'get-image-album/' + album.image}}">
@@ -28,7 +28,7 @@
           <div class="album-name">
             <p>
               <a [routerLink]="['/album', album._id]">
-                {{album.title}}
+                 {{album.title}} 
               </a>
             </p>
               ||

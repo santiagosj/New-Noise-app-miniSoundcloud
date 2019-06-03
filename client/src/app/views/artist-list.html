@@ -16,10 +16,10 @@
 </div>
 
 <div class="clearfix"></div>
-
+ 
 <ul class="artist-list" *ngIf="identity">
 
-  <li *ngFor="let artist of artists" class="artist-item">
+  <li *ngFor="let artist of artists" class="artist-item" [routerLink]="['/artista',artist._id]">
 
     <div class="artist-image">
       <img src="{{url + 'get-image-artist/' + artist.image}}">
