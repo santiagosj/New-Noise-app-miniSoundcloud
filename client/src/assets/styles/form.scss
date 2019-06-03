@@ -4,7 +4,7 @@
     position: relative;
     text-align: center;
     justify-content: center;
-  
+    
       .artist-edit{
         height: 730px;
       }
@@ -32,6 +32,7 @@
         width: 37%;
         background-color: #00000080;
         top:30px; 
+        height: -webkit-fill-available;
 
         label{
           color: white;

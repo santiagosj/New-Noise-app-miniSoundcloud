@@ -4,6 +4,53 @@
     position: relative;
     color: white;
     .head-page{
+        
+      .headHolder{
+        height: 437px;
+        .maskHolder{
+             border-bottom: 1px solid white;
+             border-top: 1px solid white;
+            .artistMask{
+                background-image: url('https://images.pexels.com/photos/114820/pexels-photo-114820.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+                height: 450px;
+                filter: blur(2px)
+            }
+         }
+
+         
+            .artistDataHolder{
+                position: absolute;
+                bottom: 413px;
+                left: 46px;
+                background-color: #00000096;
+                width: 681px;
+                height: 386px;
+
+                .dataHolder{
+                    position: relative;
+                    top: 30px;
+                    left: 35px;
+                    width: fit-content;
+                    margin: 0;
+                    display: inline-block;
+
+                   .image{
+                      
+                   }
+           
+                   .data{
+            
+                   }
+
+                }// end dataHolder
+            
+             }
+
+         }//end headHolder
+         
+
+       
+       
         h1{
             font-size: 9vw;
             background: #00000026;

@@ -46,34 +46,36 @@
 						
                     <!--CONFIGURAR PLAYLIST	-->
 					
-                     <div class="contentItem">
+            <div class="contentItem">
 
-							    <a class="playBtn" (click)="startPlayer(song)">
-									<span class="" aria-hidden="true"></span>
+							 <a class="playBtn" (click)="startPlayer(song)">
+								  <span class="" aria-hidden="true"></span>
 									<svg-icon src="../../assets/images/play.svg" [svgStyle]="{ 'width.px':50,'fill':'rgb(253,253,253)','cursor':'pointer'}"></svg-icon>
-								</a>
+							</a>
 
 							<p>{{song.number + '. '+ song.name + ' - '+ song.duration}}</p>	<!--INFO CANCION-->
-							      <!--SI EL USUARIO ES ADMIN MUESTRA LOS BOTONES PARA BORRAR O EDITAR CANCION-->
-						   <div class="editDelete" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
-							   <button [routerLink]="['/editar-tema', song._id]" class="btnWarning">
-								   Editar
-							   </button>
-								 ||
-							   <button (click)="onDeleteConfirm(song._id)" class="btnEliminar">
-								   Borrar
-							   </button>
-						   </div>
-						   <!--CONFIRMACION DE ELIMINADO DE CANCION-->
-						   <div class="seguro seguro-song" *ngIf="confirmado == song._id">
-							   <button (click)="onDeleteSong(song._id)" class="btnEliminar">
-								   Eliminar
-							   </button>
-							   <button (click)="onCancelSong()" class="btnWarning">
-								   Cancelar
-							   </button>
-						   </div>
-					 </div>
+
+							    <!--SI EL USUARIO ES ADMIN MUESTRA LOS BOTONES PARA BORRAR O EDITAR CANCION-->
+								
+								<div class="editDelete" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
+								 
+									<button [routerLink]="['/editar-tema', song._id]" class="btnWarning">Editar</button>
+								    ||
+							    <button (click)="onDeleteConfirm(song._id)" class="btnEliminar">Borrar</button>
+							 
+							  </div>
+								 
+								<!--CONFIRMACION DE ELIMINADO DE CANCION-->
+							
+								<div class="seguro seguro-song" *ngIf="confirmado == song._id">
+									
+									<button (click)="onDeleteSong(song._id)" class="btnEliminar">Eliminar</button>
+									
+									<button (click)="onCancelSong()" class="btnWarning">Cancelar</button>
+							 
+							 </div>
+							 
+					  </div>
 				   
 
 					<div class="clearfix"></div>
